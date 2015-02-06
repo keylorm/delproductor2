@@ -223,11 +223,67 @@ header #block-views-exp-display-products-page{
 
 /*** SLIDER ***/
 
-section#section-content #zone-content-wrapper .container-24{
+/*section#section-content #zone-content-wrapper .container-24{
 	width: 1280px;
 }
 section#section-content #zone-content-wrapper .container-24 .grid-24{
 	width: 1260px;
+}*/
+
+.view-home-slider #flexslider-1{
+	margin: 0px;
+	background: none;
+	border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+
+.view-home-slider #flexslider-1 .slides li{
+	margin: 0px;
+	position:relative;
+}
+
+.view-home-slider #flexslider-1 .slides li .flex-caption{
+	position: absolute;
+	width: 960px;
+	top: 50px;
+	left: 0px;
+	right: 0px;
+	margin-left: auto;
+	margin-right: auto;	
+	text-align: center;
+}
+
+.view-home-slider #flexslider-1 .slides li .flex-caption p.headline{
+	font-family: Pacifico, sans-serif;
+	font-weight: normal;
+	font-size: 45px;
+	color: #FFF;
+}
+.view-home-slider #flexslider-1 .slides li .flex-caption p.tagline{
+	font-family: Proximanova, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: #FFF;
+	text-transform: uppercase;	
+}
+.view-home-slider #flexslider-1 .slides li .flex-caption div.slide-buttom a{	
+  display: inline-block;
+  padding: 10px 15px;
+  border: 4px solid white;
+  font-family: Proximanova, sans-serif;
+  color: white;
+  font-size: 21px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;		
 }
 
 /*** FOOTER ***/
