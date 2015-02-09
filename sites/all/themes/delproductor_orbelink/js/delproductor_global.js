@@ -23,8 +23,21 @@ jQuery(document).ready(function(){
 			//console.log(subm[0]);
          }
      );
-	
-	
-	
-	
+
+	jQuery("#edit-field-caracteristica-del-product-tid input").click(function(){
+			//alert(jQuery(this).val());
+			//jQuery("#edit-submit-p-gina-de-productores").click();
+			jQuery("#edit-submit-p-gina-de-productores").click();
+		}
+	);
+		
+});
+
+jQuery( document ).ajaxComplete(function() {
+	jQuery("#edit-field-caracteristica-del-product-tid input").click(function(){
+			//alert(jQuery(this).val());
+			//jQuery("#edit-submit-p-gina-de-productores").click();
+			jQuery("#edit-submit-p-gina-de-productores").click();
+		}
+	);
 });
