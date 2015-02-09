@@ -252,7 +252,7 @@ section#section-content #zone-content-wrapper .container-24 .grid-24{
 .view-home-slider #flexslider-1 .slides li .flex-caption{
 	position: absolute;
 	width: 960px;
-	top: 50px;
+	top: 25%;
 	left: 0px;
 	right: 0px;
 	margin-left: auto;
@@ -265,17 +265,20 @@ section#section-content #zone-content-wrapper .container-24 .grid-24{
 	font-weight: normal;
 	font-size: 45px;
 	color: #FFF;
+	margin-bottom: 0px;
+	text-shadow: 2px 1px #333;
 }
 .view-home-slider #flexslider-1 .slides li .flex-caption p.tagline{
 	font-family: Proximanova, sans-serif;
 	font-weight: bold;
 	font-size: 30px;
 	color: #FFF;
-	text-transform: uppercase;	
+	text-transform: uppercase;
+	text-shadow: 2px 1px #333;
 }
 .view-home-slider #flexslider-1 .slides li .flex-caption div.slide-buttom a{	
   display: inline-block;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border: 4px solid white;
   font-family: Proximanova, sans-serif;
   color: white;
@@ -285,6 +288,196 @@ section#section-content #zone-content-wrapper .container-24 .grid-24{
   text-decoration: none;
   text-transform: uppercase;		
 }
+.view-home-slider #flexslider-1 .flex-control-nav{
+	display: none;
+}
+.view-home-slider #flexslider-1 .flex-direction-nav li a{
+	width: 78px;
+	height: 78px;
+	overflow:hidden; 
+}
+.view-home-slider #flexslider-1 .flex-direction-nav li a:before{
+  content: '';
+  margin-left: 80px;
+  height: 80px;	
+}
+
+.view-home-slider #flexslider-1 .flex-direction-nav a.flex-prev{
+	background-image: url('../images/prev_slider.png');
+}
+.view-home-slider #flexslider-1 .flex-direction-nav a.flex-next{
+	background-image: url('../images/next_slider.png');
+}
+
+.panel-separator{
+	width: 100%;
+	clear:both;
+	height: 40px;
+}
+
+/*** COMO COMPRAMOS ***/
+.pane-1 {
+}
+.pane-content{
+}
+.grid-full-width{
+	width: 960px;
+	margin: 0 auto;
+}
+
+.titulo-como-comprar h2{
+  margin-bottom: 30px;
+  font-family: Proximanova, sans-serif;
+  color: #76c9b7;
+  font-size: 38px;
+  line-height: 55px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase	;
+  background-image: url('../images/como_comprar_bgt.png');
+  background-repeat: no-repeat;
+  background-position: 60% 50%;
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+
+}
+.titulo-como-comprar h2 b{
+  font-family: Pacifico, sans-serif;
+  font-weight: 400;
+  letter-spacing: 6px;
+}
+
+.como-comprar-paso{
+	display:inline-block;
+	width: 300px;
+	margin-right: 25px;
+}
+.como-comprar-paso .como-comprar-image-wrapper img{
+	transition: all 0.3s ease 0s;
+}
+.como-comprar-paso:hover .como-comprar-image-wrapper img{
+	transform: translate(0px, -3px);
+}
+.como-comprar-paso-3{
+	margin-right: 0px;
+}
+.como-comprar-titulo-wrapper{
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-family: Proximanova, sans-serif;
+  color: #76c9b7;
+  font-size: 21px;
+  line-height: 23px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;	
+}
+.como-comprar-desc-wrapper{
+  font-family:'Source Sans Pro', sans-serif;
+  color: #58595b;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;	
+  line-height: 17px;
+}
+
+/*** NUESTRA FILOSIFÍA ***/
+.pane-2 {
+	background-color: #FDFBF6;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+.nuestra-filosofia-titulo-bloque h2{
+  margin-bottom: 30px;
+  font-family: Proximanova, sans-serif;
+  color: #6e6f71;
+  font-size: 45px;
+  line-height: 30px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: url('../images/filosofia_bgt.png');
+  background-repeat: no-repeat;
+  background-position: 60% 50%;  
+}
+.nuestra-filosofia-titulo-bloque h2 b{
+  font-family: Pacifico, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+.nuestra-filosofia-desc p{
+	color: #6E6F71;
+	font-family: Proximanova, sans-serif;
+	font-size: 21px;
+	text-align:center;
+	text-transform: uppercase;	
+}
+.ico_filosofia {
+  display: block;
+  width: 84%;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-left: auto;
+  clear: both;
+  text-align: center;
+}
+.icons {
+  width: 157px;
+  float: left;
+  font-family: Proximanova, sans-serif;
+  color: #6e6f71;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+.icons img{
+	transition: all 0.3s ease 0s;
+}
+.icons:hover img{
+	-webkit-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	transform: rotate(10deg);	
+}
+.ico {
+  display: block;
+  width: 125px;
+  height: 125px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+}
+.creemos-titulo{
+	width: 100%;
+	clear:both;
+	margin-top: 15px;
+}
+.creemos-titulo h3{
+  font-family: Pacifico, sans-serif;
+  color: #6e6f71;
+  font-size: 35px;
+  line-height: 35px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.creemos-desc{
+  padding-bottom: 40px;
+  background-image: url('../images/divicion.png');
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  font-family: Proximanova, sans-serif;
+  color: #6e6f71;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  text-align: center;	
+}
+.creemos-img{
+}
+
 
 /*** FOOTER ***/
 
