@@ -229,7 +229,9 @@ header #block-views-exp-display-products-page{
 section#section-content #zone-content-wrapper .container-24 .grid-24{
 	width: 1260px;
 }*/
-
+body .panels-flexible-region-1-center{
+	width: 100%;
+}
 .view-home-slider #flexslider-1{
 	margin: 0px;
 	background: none;
