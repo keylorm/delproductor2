@@ -46,4 +46,13 @@ function delproductor_orbelink_preprocess_page(&$variables) {
   if(drupal_is_front_page()){
     $variables['page']['content']['content']['#grid_container'] = 0;
   }
+
+
+
+}
+
+function delproductor_orbelink_form_alter(&$form, &$form_state, $form_id){
+/*  if($form_id=='views_exposed_form'){
+    $form['field_caracteristica_del_product_tid']['#options']['All'] = "Todos";
+  }*/
 }
