@@ -558,13 +558,21 @@ body h1#page-title{
 	line-height: 19px;
 }
 
+
+.views-exposed-widget.views-widget-filter-field_caracteristica_del_product_tid {
+    min-width: 632px;
+}
+.views-exposed-widget.views-widget-filter-title_field_value {
+    min-width: 240px;
+}
+
 .page-productores .view-filters{
 	margin-bottom: 50px;
 }
 .page-productores .view-filters #edit-title-field-value{
 	border: none;
+	width: 240px;
 	height: 54px;
-	width: 180px;
 	border-bottom: 1px solid #76C9B7;
 	border-top: 1px solid #76C9B7;
 	background-color:transparent;
@@ -575,6 +583,7 @@ body h1#page-title{
 	padding-left: 60px;
 	box-sizing: border-box;	
 }
+
 #edit-submit-p-gina-de-productores{
 	height: 54px;
 	border: none;
@@ -591,6 +600,7 @@ body h1#page-title{
 .page-productores .views-submit-button{
 	/*display: none;*/
 }
+.ajax-progress{ display: block; position: absolute;}
 .form-item-field-caracteristica-del-product-tid input{
 	display: none;
 }
