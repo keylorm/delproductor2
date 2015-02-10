@@ -25,8 +25,6 @@ jQuery(document).ready(function(){
      );
 
 	jQuery("#edit-field-caracteristica-del-product-tid input").click(function(){
-			//alert(jQuery(this).val());
-			//jQuery("#edit-submit-p-gina-de-productores").click();
 			jQuery("#edit-submit-p-gina-de-productores").click();
 		}
 	);
@@ -35,8 +33,6 @@ jQuery(document).ready(function(){
 
 jQuery( document ).ajaxComplete(function() {
 	jQuery("#edit-field-caracteristica-del-product-tid input").click(function(){
-			//alert(jQuery(this).val());
-			//jQuery("#edit-submit-p-gina-de-productores").click();
 			jQuery("#edit-submit-p-gina-de-productores").click();
 		}
 	);
