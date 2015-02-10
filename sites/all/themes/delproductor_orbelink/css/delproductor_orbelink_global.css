@@ -567,6 +567,10 @@ footer #block-block-2 .footer-redes-box a{
 
 /* PRODUCTORES */
 
+#zone-preface{
+	margin: 0px; padding: 0px;
+}
+
 body h1#page-title{
   font-family: Pacifico, sans-serif;
   color: #76C9B7;
@@ -669,13 +673,27 @@ body h1#page-title{
 	margin-bottom: 24px;
 	display:block;
 	float:left;
-	background-image: url('../images/flecha_der.png');
+	/*background-image: url('../images/flecha_der.png');*/
 	background-repeat: no-repeat;
 	background-position: 91% 88%;
 	transition: all 0.3s ease 0s;
 }
-.page-productores .views-row:hover{
-	background-position: 98% 88%;
+.page-productores .views-row:hover .views-field-path span a{
+	background-position: 90% 50%;
+}
+.page-productores .views-field-path{
+	position:relative;
+}
+.page-productores .views-field-path span a{
+	display: block;
+	width: 50px;
+	height: 66px;
+	margin-top: -66px;
+	float:right;
+	background-image: url('../images/flecha_der.png');
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	transition: all 0.3s ease 0s;	
 }
 
 .page-productores .views-row-last{
