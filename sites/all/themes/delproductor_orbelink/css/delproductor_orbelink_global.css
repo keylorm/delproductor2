@@ -326,6 +326,22 @@ body .panels-flexible-region-1-center{
 	margin: 0 auto;
 	float:none;	
 }
+body #breadcrumb .breadcrumb{
+	background: none;
+	border-radius: 0px;
+	border: none;
+	padding: 0px;
+	font-weight:bold;
+  font-family:'Source Sans Pro', sans-serif;
+  font-size: 13px;	
+}
+body #breadcrumb .breadcrumb a{
+	font-weight: normal;
+	background-image: url('../images/flecha_breadcrumb.png');
+	background-repeat:no-repeat;
+	background-position: 100% 50%;
+	padding-right: 11px;
+}
 
 /*** COMO COMPRAMOS ***/
 .pane-1 {
@@ -709,9 +725,40 @@ body h1#page-title{
 	margin-top: 20px;
 }
 
-.bgrojo {
+#zone-postscript {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #e35755;
 }
-
+#zone-postscript h3{
+	font-family: Proximanova, sans-serif;
+	font-size: 30px;
+	font-weight: 300;
+	color: #FFF;
+	float: left;
+	text-transform:uppercase;	
+}
+#zone-postscript h3 span{
+	 font-family: Pacifico, sans-serif;
+	 font-size: 40px;
+	 font-weight:400;
+	 text-transform: none;
+	 margin-right: 15px;
+}
+#zone-postscript .llamado-accion-canastas-boton-wrapper{
+	text-align: center;
+}
+#zone-postscript .llamado-accion-canastas-boton-wrapper a{
+  display: inline-block;
+  padding: 10px 15px;
+  border: 4px solid white;
+  font-family: Proximanova, sans-serif;
+  color: white;
+  font-size: 21px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+	float: right;
+	margin-top: 36px;  	
+}
