@@ -30,6 +30,7 @@ regions[preface_first] = Preface First
 regions[preface_second] = Preface Second
 regions[preface_third] = Preface Third
 
+regions[before_content] = Before Content
 regions[after_content] = After Content
 
 regions[postscript_first] = Postscript First
