@@ -55,4 +55,7 @@ function delproductor_orbelink_form_alter(&$form, &$form_state, $form_id){
 /*  if($form_id=='views_exposed_form'){
     $form['field_caracteristica_del_product_tid']['#options']['All'] = "Todos";
   }*/
+  if($form_id=='views_exposed_form'){
+    $form['submit']['#value'] = "Buscar";
+  }
 }
