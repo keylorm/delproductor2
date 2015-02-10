@@ -560,10 +560,10 @@ body h1#page-title{
 
 
 .views-exposed-widget.views-widget-filter-field_caracteristica_del_product_tid {
-    min-width: 632px;
+    width: 632px;
 }
 .views-exposed-widget.views-widget-filter-title_field_value {
-    min-width: 240px;
+    min-width: 238px;
 }
 
 .page-productores .view-filters{
@@ -571,7 +571,7 @@ body h1#page-title{
 }
 .page-productores .view-filters #edit-title-field-value{
 	border: none;
-	width: 240px;
+	width: 238px;
 	height: 54px;
 	border-bottom: 1px solid #76C9B7;
 	border-top: 1px solid #76C9B7;
@@ -597,10 +597,13 @@ body h1#page-title{
 	font-weight:300;		
 }
 
-.page-productores .views-submit-button{
-	/*display: none;*/
+.ajax-progress{
+	display: block;
+	position: absolute;
+	margin-top: -35px;
+	margin-left: -30px;
 }
-.ajax-progress{ display: block; position: absolute;}
+
 .form-item-field-caracteristica-del-product-tid input{
 	display: none;
 }
