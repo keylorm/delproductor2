@@ -318,6 +318,14 @@ body .panels-flexible-region-1-center{
 	clear:both;
 	height: 40px;
 }
+/* GENERAL */
+
+#section-content .grid-24{
+	display:block;
+	width: 1000px;
+	margin: 0 auto;
+	float:none;	
+}
 
 /*** COMO COMPRAMOS ***/
 .pane-1 {
@@ -560,10 +568,10 @@ body h1#page-title{
 
 
 .views-exposed-widget.views-widget-filter-field_caracteristica_del_product_tid {
-    width: 632px;
+    width: 635px;
 }
 .views-exposed-widget.views-widget-filter-title_field_value {
-    min-width: 238px;
+    min-width: 275px;
 }
 
 .page-productores .view-filters{
@@ -571,7 +579,7 @@ body h1#page-title{
 }
 .page-productores .view-filters #edit-title-field-value{
 	border: none;
-	width: 238px;
+	width: 275px;
 	height: 54px;
 	border-bottom: 1px solid #76C9B7;
 	border-top: 1px solid #76C9B7;
@@ -594,7 +602,9 @@ body h1#page-title{
 	margin-top: 0px;
 	font-family:'Source Sans Pro', sans-serif;
 	font-size: 17px;
-	font-weight:300;		
+	font-weight:300;
+	padding-left: 20px;
+	padding-right: 20px;			
 }
 
 .ajax-progress{
@@ -639,17 +649,24 @@ body h1#page-title{
 .page-productores .views-row{
 	border: 1px solid #6E6F71;
 	padding: 0px;
-	margin-right: 15px;
-	margin-bottom: 15px;
-	display:inline-block;
+	margin-right: 24px;
+	margin-bottom: 24px;
+	display:block;
+	float:left;
 	background-image: url('../images/flecha_der.png');
 	background-repeat: no-repeat;
 	background-position: 91% 88%;
 	transition: all 0.3s ease 0s;
 }
 .page-productores .views-row:hover{
-	background-position: 91% 99%;
+	background-position: 98% 88%;
 }
+
+.page-productores .views-row-last{
+	margin-right: 0px;
+
+}
+
 .views-row .views-field-title a{
 	color: #76C9B7;
 	font-family: Proximanova, sans-serif;
@@ -673,3 +690,28 @@ body h1#page-title{
 .field-name-field-ubicacion{
 	padding-bottom: 10px;
 }
+#views_infinite_scroll_button{
+	text-align:center;
+}
+#views_infinite_scroll_button a{
+	border-color: #6e6f71;
+	color: #6e6f71;	
+	display: inline-block;
+	padding: 5px 20px;
+	border: 4px solid;
+	font-family: Proximanova, sans-serif;
+	font-size: 21px;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0 auto;	
+	margin-top: 20px;
+}
+
+.bgrojo {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #e35755;
+}
+
