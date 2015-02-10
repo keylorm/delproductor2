@@ -557,11 +557,45 @@ body h1#page-title{
 	font-weight:300;	
 	line-height: 19px;
 }
+
+.page-productores .view-filters{
+	margin-bottom: 50px;
+}
+.page-productores .view-filters #edit-title-field-value{
+	border: none;
+	height: 54px;
+	width: 180px;
+	border-bottom: 1px solid #76C9B7;
+	border-top: 1px solid #76C9B7;
+	background-color:transparent;
+	margin: 0px;
+	background-image: url('../images/lupa_2.png');
+	background-position: 5% 50%;
+	background-repeat: no-repeat;
+	padding-left: 60px;
+	box-sizing: border-box;	
+}
+#edit-submit-p-gina-de-productores{
+	height: 54px;
+	border: none;
+	background: none;
+	background-color: #76C9B7;
+	border-radius: 0px;
+	color: #FFF;
+	margin-top: 0px;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 17px;
+	font-weight:300;		
+}
+
 .page-productores .views-submit-button{
-	display: none;
+	/*display: none;*/
 }
 .form-item-field-caracteristica-del-product-tid input{
 	display: none;
+}
+.page-productores .views-exposed-form .views-exposed-widget{
+	margin: 0px; padding: 0px;
 }
 .form-radios{
 	width: 100%;
@@ -595,7 +629,7 @@ body h1#page-title{
 	margin-right: 30px;
 	display:inline-block;
 }
-.views-row .views-field-title{
+.views-row .views-field-title a{
 	color: #76C9B7;
 	font-family: Proximanova, sans-serif;
 	font-size: 19px;
@@ -607,4 +641,14 @@ body h1#page-title{
 	font-family:'Source Sans Pro', sans-serif;
 	font-size: 12px;
 	font-weight:normal;	
+}
+.views-row .views-field-title,
+.field-name-field-ubicacion{
+	padding-left: 20px;
+}
+.views-row .views-field-title{
+	padding-top: 10px;
+}
+.field-name-field-ubicacion{
+	padding-bottom: 10px;
 }
