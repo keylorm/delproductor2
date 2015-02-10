@@ -43,7 +43,7 @@ function delproductor_orbelink_preprocess_node(&$variables) {
  * Override the submitted variable.
  */
 function delproductor_orbelink_preprocess_page(&$variables) {
-  
+    $variables['page']['content']['preface']['#grid_container'] = 0;
     $variables['page']['content']['content']['#grid_container'] = 0;
     $variables['page']['content']['postscript']['#grid_container'] = 0;
   
