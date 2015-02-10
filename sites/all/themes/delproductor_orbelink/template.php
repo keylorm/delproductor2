@@ -43,12 +43,9 @@ function delproductor_orbelink_preprocess_node(&$variables) {
  * Override the submitted variable.
  */
 function delproductor_orbelink_preprocess_page(&$variables) {
-  if(drupal_is_front_page()){
+  
     $variables['page']['content']['content']['#grid_container'] = 0;
-  }
-
-
-
+  
 }
 
 function delproductor_orbelink_form_alter(&$form, &$form_state, $form_id){
