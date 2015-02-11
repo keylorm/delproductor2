@@ -234,6 +234,10 @@ section#section-content #zone-content-wrapper .container-24 .grid-24{
 body .panels-flexible-region-1-center{
 	width: 100%;
 }
+.pane-views-home-slider-block{
+	max-width: 1280px;
+	margin: 0 auto;
+}
 .view-home-slider #flexslider-1{
 	margin: 0px;
 	background: none;
@@ -290,7 +294,11 @@ body .panels-flexible-region-1-center{
   font-weight: 400;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;		
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;		
+}
+.view-home-slider #flexslider-1 .slides li .flex-caption div.slide-buttom a:hover{
+	background: rgba(0,0,0,0.3);
 }
 .view-home-slider #flexslider-1 .flex-control-nav{
 	display: none;
@@ -416,7 +424,8 @@ body #breadcrumb .breadcrumb a{
 	padding-top: 40px;
 	padding-bottom: 20px;
 }
-.nuestra-filosofia-titulo-bloque h2{
+.nuestra-filosofia-titulo-bloque h2,
+.nuestros-productores-titulo-bloque h2{
   margin-bottom: 30px;
   font-family: Proximanova, sans-serif;
   color: #6e6f71;
@@ -429,12 +438,17 @@ body #breadcrumb .breadcrumb a{
   background-repeat: no-repeat;
   background-position: 50% 50%;  
 }
-.nuestra-filosofia-titulo-bloque h2 b{
+.nuestros-productores-titulo-bloque h2{
+	background-image: url('../images/productos_bgt.png');
+}
+.nuestra-filosofia-titulo-bloque h2 b,
+.nuestros-productores-titulo-bloque h2 b{
   font-family: Pacifico, sans-serif;
   font-weight: 400;
   text-transform: lowercase;
 }
-.nuestra-filosofia-desc p{
+.nuestra-filosofia-desc p,
+.nuestros-productores-desc p{
 	color: #6E6F71;
 	font-family: Proximanova, sans-serif;
 	font-size: 21px;
@@ -506,6 +520,12 @@ body #breadcrumb .breadcrumb a{
 .creemos-img{
 }
 
+.pane-views-p-gina-de-productores-block-1{
+}
+
+
+
+
 
 /*** FOOTER ***/
 
@@ -569,6 +589,9 @@ footer #block-block-2 .footer-redes-box a{
 
 #zone-preface{
 	margin: 0px; padding: 0px;
+}
+#zone-preface .grid-24{
+	width: 1280px;
 }
 
 body h1#page-title{
@@ -666,7 +689,8 @@ body h1#page-title{
 }
 
 
-.page-productores .views-row{
+.page-productores .views-row,
+.view-id-p_gina_de_productores .views-row{
 	border: 1px solid #6E6F71;
 	padding: 0px;
 	margin-right: 24px;
@@ -678,13 +702,27 @@ body h1#page-title{
 	background-position: 91% 88%;
 	transition: all 0.3s ease 0s;
 }
-.page-productores .views-row:hover .views-field-path span a{
+.front .view-id-p_gina_de_productores .views-row-1{
+	width: 48%;
+}
+.front .view-id-p_gina_de_productores .views-row-2{
+	width: 48%;
+	margin-right: 0px;
+}
+.front .view-id-p_gina_de_productores .views-row-last{
+	margin-right: 0px;
+}
+
+.page-productores .views-row:hover .views-field-path span a,
+.view-id-p_gina_de_productores .views-row:hover .views-field-path span a{
 	background-position: 90% 50%;
 }
-.page-productores .views-field-path{
+.page-productores .views-field-path,
+.view-id-p_gina_de_productores .views-field-path{
 	position:relative;
 }
-.page-productores .views-field-path span a{
+.page-productores .views-field-path span a,
+.view-id-p_gina_de_productores .views-field-path span a{
 	display: block;
 	width: 50px;
 	height: 66px;
@@ -741,6 +779,9 @@ body h1#page-title{
 	text-transform: uppercase;
 	margin: 0 auto;	
 	margin-top: 20px;
+}
+.more-link{
+	clear:both;
 }
 
 #zone-postscript {
