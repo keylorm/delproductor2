@@ -272,6 +272,7 @@ body .panels-flexible-region-1-center{
 	font-family: Pacifico, sans-serif;
 	font-weight: normal;
 	font-size: 45px;
+	line-height: 70px;
 	color: #FFF;
 	margin-bottom: 0px;
 	text-shadow: 2px 1px #333;
@@ -280,6 +281,8 @@ body .panels-flexible-region-1-center{
 	font-family: Proximanova, sans-serif;
 	font-weight: bold;
 	font-size: 30px;
+	line-height: 45px;
+	letter-spacing: 2px;
 	color: #FFF;
 	text-transform: uppercase;
 	text-shadow: 2px 1px #333;
@@ -295,10 +298,11 @@ body .panels-flexible-region-1-center{
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 0.3s ease 0s;		
+  transition: all 0.3s ease 0s;
+  background: rgba(0,0,0,0.3);		
 }
 .view-home-slider #flexslider-1 .slides li .flex-caption div.slide-buttom a:hover{
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.6);
 }
 .view-home-slider #flexslider-1 .flex-control-nav{
 	display: none;
@@ -352,10 +356,7 @@ body #breadcrumb .breadcrumb a{
 }
 
 /*** COMO COMPRAMOS ***/
-.pane-1 {
-}
-.pane-content{
-}
+
 .grid-full-width{
 	width: 1000px;
 	margin: 0 auto;
@@ -516,11 +517,6 @@ body #breadcrumb .breadcrumb a{
   line-height: 26px;
   font-weight: 400;
   text-align: center;	
-}
-.creemos-img{
-}
-
-.pane-views-p-gina-de-productores-block-1{
 }
 
 
@@ -703,13 +699,21 @@ body h1#page-title{
 	transition: all 0.3s ease 0s;
 }
 .front .view-id-p_gina_de_productores .views-row-1{
-	width: 48%;
+	width: 486px;
+	margin-right: 20px;
 }
 .front .view-id-p_gina_de_productores .views-row-2{
-	width: 48%;
+	width: 486px;
 	margin-right: 0px;
 }
+.front .view-id-p_gina_de_productores .views-row-3{
+	width: 315px;
+}
+.front .view-id-p_gina_de_productores .views-row-4{
+	width: 315px;
+}
 .front .view-id-p_gina_de_productores .views-row-last{
+	width: 315px;
 	margin-right: 0px;
 }
 
@@ -765,7 +769,8 @@ body h1#page-title{
 #views_infinite_scroll_button{
 	text-align:center;
 }
-#views_infinite_scroll_button a{
+#views_infinite_scroll_button a,
+body .more-link a{
 	border-color: #6e6f71;
 	color: #6e6f71;	
 	display: inline-block;
@@ -780,8 +785,36 @@ body h1#page-title{
 	margin: 0 auto;	
 	margin-top: 20px;
 }
-.more-link{
+body .more-link{
 	clear:both;
+	text-align:center;
+}
+body .more-link a{
+	position:relative;
+}
+
+body .more-link a:before{
+	position:absolute;
+	content: ' ';
+	width: 50px;
+	height: 35px;
+	float: left;
+	background-image: url('../images/adorno_btn_izq.png');
+	background-repeat: no-repeat;
+	background-position:center;
+	left: -70px;
+}
+body .more-link a:after{
+	position:absolute;
+	content: ' ';
+	width: 50px;
+	height: 35px;
+	float: left;
+	background-image: url('../images/adorno_btn_der.png');
+	background-repeat: no-repeat;
+	background-position:center;
+	right: -70px;
+	bottom: 0px;
 }
 
 #zone-postscript {
