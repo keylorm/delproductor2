@@ -522,8 +522,10 @@ body #breadcrumb .breadcrumb a{
 /*** NUESTRAS RECETAS ***/
 
 .pane-importar-recetas-importar-recetas{
+}
+.nuestras_recetas_full{
 	background-color: #FDFBF6;
-	padding: 50px 0px;
+	padding: 50px 0px;	
 }
 
 .nuestras-recetas-titulo h2{
@@ -556,6 +558,7 @@ body #breadcrumb .breadcrumb a{
 .recetas{
 	float:left;
 	clear:both;
+	margin-top: 20px;
 }
 .receta{
 	border: 1px solid #6E6F71;
@@ -571,7 +574,16 @@ body #breadcrumb .breadcrumb a{
 	height: 287px;
 }
 .receta.row_3,
-.receta.row_6{
+.receta.row_6,
+.receta.row_9,
+.receta.row_12,
+.receta.row_15,
+.receta.row_18,
+.receta.row_21,
+.receta.row_24,
+.receta.row_27,
+.receta.row_30,
+.receta.row_33{
 	margin-right: 0px;
 }
 .receta .receta_img{
@@ -629,8 +641,9 @@ body #breadcrumb .breadcrumb a{
 	position:relative;
 	z-index: 99;	
 }
-.pane-importar-recetas-importar-recetas .more-link a:after,
-.pane-importar-recetas-importar-recetas .more-link a:before{
+/*.pane-importar-recetas-importar-recetas*/
+.more-link a:after,
+.more-link a:before{
 	display: none;
 }
 
@@ -709,6 +722,8 @@ body h1#page-title{
   font-size: 50px;
   font-weight: normal;	
   text-transform:none;
+  margin-left: 0px;
+  margin-bottom: 10px;
 }
 .content p{
 	color: #58595B;
