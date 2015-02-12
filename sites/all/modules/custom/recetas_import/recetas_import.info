@@ -1,3 +1,0 @@
-name = Recetas Import
-description = Este módulo ayuda a importar las recetas desde el sitio de comaorganico.com por medio de RSS Feeds y crea nodos dentro del productor basado en esas recetas.
-core = 7.x

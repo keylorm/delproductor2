@@ -519,7 +519,120 @@ body #breadcrumb .breadcrumb a{
   text-align: center;	
 }
 
+/*** NUESTRAS RECETAS ***/
 
+.pane-importar-recetas-importar-recetas{
+	background-color: #FDFBF6;
+	padding: 50px 0px;
+}
+
+.nuestras-recetas-titulo h2{
+  margin-bottom: 30px;
+  font-family: Proximanova, sans-serif;
+  color: #6e6f71;
+  font-size: 45px;
+  line-height: 30px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: url('../images/filosofia_bgt.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;  
+}
+
+.nuestras-recetas-titulo h2 b{
+  font-family: Pacifico, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+.nuestras-recetas-desc p{
+	color: #6E6F71;
+	font-family: Proximanova, sans-serif;
+	font-size: 21px;
+	text-align:center;
+	text-transform: uppercase;	
+}
+
+.recetas{
+	float:left;
+	clear:both;
+}
+.receta{
+	border: 1px solid #6E6F71;
+	padding: 0px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	display: block;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: 91% 88%;
+	transition: all 0.3s ease 0s;	
+	width: 317px;
+	height: 287px;
+}
+.receta.row_3,
+.receta.row_6{
+	margin-right: 0px;
+}
+.receta .receta_img{
+	width: 100%;
+	height: 155px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size:cover;
+}
+.receta .receta_info{
+	padding: 10px 20px;
+	 box-sizing: border-box;
+	position:relative;
+	height: 132px;
+}
+.receta .receta_info a.receta_titulo{
+	display:block;
+	color: #76C9B7;
+	font-family: Proximanova, sans-serif;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+	text-transform: uppercase;	
+}
+.receta .receta_info p{
+	color: #6E6F71;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	margin-top: 5px;
+	margin-bottom: 10px;	
+}
+.receta .icons_recetas{
+	position:absolute;
+	bottom: 10px;
+}
+.receta .icons_recetas img{
+	margin-right: 10px;
+}
+
+.receta:hover a.receta_flecha{
+	background-position: 90% 50%;
+}
+
+.receta a.receta_flecha{
+	display: block;
+	width: 40px;
+	height: 55px;
+	float:right;
+	margin-top: -55px;
+	background-image: url('../images/flecha_der.png');
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	transition: all 0.3s ease 0s;
+	position:relative;
+	z-index: 99;	
+}
+.pane-importar-recetas-importar-recetas .more-link a:after,
+.pane-importar-recetas-importar-recetas .more-link a:before{
+	display: none;
+}
 
 
 

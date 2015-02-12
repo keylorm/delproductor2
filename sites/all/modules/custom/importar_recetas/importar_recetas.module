@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * @file
+ * Un módulo de bloque que 
+ */
+
+function importar_recetas_block_info()
+{
+    $block['importar_recetas'] = array(
+        'info' => t('Importar Recetas'),
+        'cache' => DRUPAL_NO_CACHE,
+    );
+    $block['pagina_importar_recetas'] = array(
+        'info' => t('Página Importar Recetas'),
+        'cache' => DRUPAL_NO_CACHE,
+    );	
+	
+	return $block;
+}
+
+function importar_recetas_block_view($val)
+{
+	if($val == 'importar_recetas'){
+		$mc = 6;
+	}else if($val == 'pagina_importar_recetas'){
+		$mc = 12;
+	}
+	$path = drupal_get_path('module', 'importar_recetas');
+
+	$url_on = "http://comaorganico.com/feed/";
+	$url_lo = $path . "/recetas.xml";
+	
+	$rss = simplexml_load_file($url_lo);
+	$modificado_lo = strtotime($rss->channel->lastBuildDate);
+
+	$h = get_headers($url_on, 1);
+	$modificado_on = strtotime($h['Last-Modified']);
+	
+	if($modificado_on > $modificado_lo){
+		$xml = file_get_contents($url_on);
+		$fp = fopen($path . '/recetas.xml', "w+");
+		fputs($fp, $xml);
+		$rss = simplexml_load_file($url_lo);
+	}
+	
+	$html = '
+
+	<div id="nuestras-recetas">
+		<div class="nuestras-recetas-titulo">
+			<h2>Nuestras <b>recetas</b></h2>
+		</div>
+		<div class="nuestras-recetas-desc">
+		<p>Conozca las manos que preparan nuestros productos.</p>
+		</div>
+	</div>	
+	
+	
+	<div class="grid-24">
+		<div class="recetas">';
+	$cant = 1;
+	foreach ($rss as $items) {   
+		foreach($items->item as $item){ 
+			$html .= '<div class="receta row_'.$cant.'">';
+			
+			$html .= '
+			<a href="'.$item->link.'" target="_blank">
+			<div class="receta_img" style="background-image: url('.$item->img.');"></div>
+			</a>';
+			
+			$html .= '<div class="receta_info">
+			<a class="receta_titulo" href="'.$item->link.'" target="_blank">'.$item->title.'</a>';
+			
+			$html .= '<p>';
+			if($item->cookingtime!=''){
+				$html .= $item->cookingtime . ' min';
+			}
+			if($item->serves!=''){
+				$html .= ' | '.$item->serves . ' personas';
+			}	
+			$html .= '</p>';
+			
+			$html .= '<div class="icons_recetas">';
+			foreach($item->categorias as $c){ 
+				switch($c->categoria['id']){
+					case '9':
+						$html .= '<img src="/'.$path.'/images/icon_1.png" >';
+					break;
+					case '26':
+						$html .= '<img src="/'.$path.'/images/icon_2.png" >';
+					break;
+					case '119':
+						$html .= '<img src="/'.$path.'/images/icon_3.png" >';
+					break;
+					case '8':
+						$html .= '<img src="/'.$path.'/images/icon_4.png" >';
+					break;
+					case '315':
+						$html .= '<img src="/'.$path.'/images/icon_5.png" >';
+					break;																
+				}				
+			}
+			$html .= '</div>'; $html .= '</div>';
+			$html .= '<a class="receta_flecha" href="'.$item->link.'" target="_blank">&nbsp;</a>';
+			
+			
+			$item->categorias . ' <br />' .
+			
+			'
+			<br /><br /><br /><br />
+			';
+			
+			$html .= '</div>';
+			if($cant==$mc){ break; }
+			$cant = $cant + 1;
+		} 
+	}
+	$html .= '</div>
+	
+<div class="more-link">
+  <a href="/recetas/" target="_blank">Ver Todas</a>
+</div>
+	
+	</div>';
+	
+	
+	$block['content'] = $html;
+	
+	return $block;
+}
