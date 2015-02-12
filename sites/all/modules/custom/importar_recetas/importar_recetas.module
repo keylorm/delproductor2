@@ -23,6 +23,7 @@ function importar_recetas_block_view($val)
 {
 	if($val == 'importar_recetas'){
 		$mc = 6;
+		$link = '/recetas/';
 		$titulo = '
 			<div id="nuestras-recetas">
 				<div class="nuestras-recetas-titulo">
@@ -34,7 +35,8 @@ function importar_recetas_block_view($val)
 			</div>
 		';
 	}else if($val == 'pagina_importar_recetas'){
-		$mc = 12;
+		$mc = 48;
+		$link = 'javascript:masRecetas();';
 		$titulo = '
 			<p>Pruebe las recetas deliciosas y saludables, hechas con ingredientes naturales y frescos cortesía de www.comaorganico.com. </p>
 		';		
@@ -124,7 +126,7 @@ function importar_recetas_block_view($val)
 	</div>
 	
 	<div class="more-link">
-		<a href="/recetas/" target="_blank">Ver Todas</a>
+		<a href="'.$link.'">Ver Todas</a>
 	</div>
 	
 		</div>

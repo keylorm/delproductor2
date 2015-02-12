@@ -523,9 +523,19 @@ body #breadcrumb .breadcrumb a{
 
 .pane-importar-recetas-importar-recetas{
 }
+#zone-postscript{
+	margin: 0px !important;
+}
+body .region-postscript-full-width{
+	width: 100% !important;
+	margin: 0px !important;
+}
 .nuestras_recetas_full{
 	background-color: #FDFBF6;
 	padding: 50px 0px;	
+}
+.page-recetas .nuestras_recetas_full{
+	background: none;
 }
 
 .nuestras-recetas-titulo h2{
@@ -572,8 +582,9 @@ body #breadcrumb .breadcrumb a{
 	transition: all 0.3s ease 0s;	
 	width: 317px;
 	height: 287px;
+	transition: all 0.3s ease 0s;
 }
-.receta.row_3,
+/*.receta.row_3,
 .receta.row_6,
 .receta.row_9,
 .receta.row_12,
@@ -583,7 +594,15 @@ body #breadcrumb .breadcrumb a{
 .receta.row_24,
 .receta.row_27,
 .receta.row_30,
-.receta.row_33{
+.receta.row_33,
+.receta.row_36,
+.receta.row_39,
+.receta.row_42,
+.receta.row_45,
+.receta.row_48{
+	margin-right: 0px;
+}*/
+.recetas .receta:nth-child(3n+3){
 	margin-right: 0px;
 }
 .receta .receta_img{
@@ -945,12 +964,12 @@ body .more-link a:after{
 	bottom: 0px;
 }
 
-#zone-postscript {
+#zone-content-below {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #e35755;
 }
-#zone-postscript h3{
+#zone-content-below h3{
 	font-family: Proximanova, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
@@ -958,17 +977,17 @@ body .more-link a:after{
 	float: left;
 	text-transform:uppercase;	
 }
-#zone-postscript h3 span{
+#zone-content-below h3 span{
 	 font-family: Pacifico, sans-serif;
 	 font-size: 40px;
 	 font-weight:400;
 	 text-transform: none;
 	 margin-right: 15px;
 }
-#zone-postscript .llamado-accion-canastas-boton-wrapper{
+#zone-content-below .llamado-accion-canastas-boton-wrapper{
 	text-align: center;
 }
-#zone-postscript .llamado-accion-canastas-boton-wrapper a{
+#zone-content-below .llamado-accion-canastas-boton-wrapper a{
   display: inline-block;
   padding: 10px 15px;
   border: 4px solid white;
