@@ -1,7 +1,3 @@
-  jQuery(function() {
-    jQuery( document ).tooltip();
-  });
-
 jQuery.noConflict(); 
 jQuery(document).ready(function(){
 	jQuery('#zone-menu-wrapper #block-system-main-menu .menu .mp').hover(

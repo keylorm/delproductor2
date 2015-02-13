@@ -95,19 +95,19 @@ function importar_recetas_block_view($val)
 				foreach($cs->categoria as $c){
 					switch($c['id']){
 						case '330':
-							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_1.png" >';
+							$html .= '<div data-tooltip="'.$c.'"><img src="/'.$path.'/images/icon_1.png" ></div>';
 						break;
 						case '331':
-							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_2.png" >';
+							$html .= '<div data-tooltip="'.$c.'"><img src="/'.$path.'/images/icon_2.png" ></div>';
 						break;
 						case '332':
-							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_3.png" >';
+							$html .= '<div data-tooltip="'.$c.'"><img src="/'.$path.'/images/icon_3.png" ></div>';
 						break;
 						case '333':
-							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_4.png" >';
+							$html .= '<div data-tooltip="'.$c.'"><img src="/'.$path.'/images/icon_4.png" ></div>';
 						break;
 						case '334':
-							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_5.png" >';
+							$html .= '<div data-tooltip="'.$c.'"><img src="/'.$path.'/images/icon_5.png" ></div>';
 						break;																
 					}
 				}
