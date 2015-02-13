@@ -43,11 +43,14 @@ function importar_recetas_block_view($val)
 	}
 	$path = drupal_get_path('module', 'importar_recetas');
 
-	$url_on = "http://comaorganico.com/feed/";
+	$url_on = "http://comaorganico.com/category/recetas/feed/";
 	$url_lo = $path . "/recetas.xml";
+	$modificado_lo = 0;
 	
-	$rss = simplexml_load_file($url_lo);
-	$modificado_lo = strtotime($rss->channel->lastBuildDate);
+	if(file_exists($url_lo)){
+		$rss = simplexml_load_file($url_lo);
+		$modificado_lo = strtotime($rss->channel->lastBuildDate);		
+	}
 
 	$h = get_headers($url_on, 1);
 	$modificado_on = strtotime($h['Last-Modified']);
@@ -76,7 +79,7 @@ function importar_recetas_block_view($val)
 			</a>';
 			
 			$html .= '<div class="receta_info">
-			<a class="receta_titulo" href="'.$item->link.'" target="_blank">'.$item->title.'</a>';
+			<a class="receta_titulo" href="'.$item->link.'" target="_blank">'.substr($item->title, 0, 70).'</a>';
 			
 			$html .= '<p>';
 			if($item->cookingtime!=''){
@@ -88,24 +91,26 @@ function importar_recetas_block_view($val)
 			$html .= '</p>';
 			
 			$html .= '<div class="icons_recetas">';
-			foreach($item->categorias as $c){ 
-				switch($c->categoria['id']){
-					case '9':
-						$html .= '<img src="/'.$path.'/images/icon_1.png" >';
-					break;
-					case '26':
-						$html .= '<img src="/'.$path.'/images/icon_2.png" >';
-					break;
-					case '119':
-						$html .= '<img src="/'.$path.'/images/icon_3.png" >';
-					break;
-					case '8':
-						$html .= '<img src="/'.$path.'/images/icon_4.png" >';
-					break;
-					case '315':
-						$html .= '<img src="/'.$path.'/images/icon_5.png" >';
-					break;																
-				}				
+			foreach($item->categorias as $cs){ 
+				foreach($cs->categoria as $c){
+					switch($c['id']){
+						case '330':
+							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_1.png" >';
+						break;
+						case '331':
+							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_2.png" >';
+						break;
+						case '332':
+							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_3.png" >';
+						break;
+						case '333':
+							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_4.png" >';
+						break;
+						case '334':
+							$html .= '<img title="'.$c.'" src="/'.$path.'/images/icon_5.png" >';
+						break;																
+					}
+				}
 			}
 			$html .= '</div>'; $html .= '</div>';
 			$html .= '<a class="receta_flecha" href="'.$item->link.'" target="_blank">&nbsp;</a>';

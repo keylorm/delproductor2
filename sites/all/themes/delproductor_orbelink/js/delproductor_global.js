@@ -29,7 +29,7 @@ jQuery(document).ready(function(){
 		}
 	);
 	
-	jQuery(".page-recetas .receta").addClass("hidden").css({'display':'none'});
+	jQuery(".page-recetas .receta").css({'display':'none'});
 	
 		
 });
@@ -41,12 +41,15 @@ function masRecetas(){
 	var c = ordenid + cantv;
 	
 	for(i=ordenid;i<=c;i++){
-		var div = jQuery(".page-recetas .recetas .row_"+i).css({'display':'block'});
-		ordenid = ordenid + 1	
+		//jQuery(".page-recetas .recetas .row_"+i).css({'display':'block'});
+		jQuery(".page-recetas .recetas .row_"+i).fadeIn('slow');
+		ordenid = ordenid + 1
+		if(ordenid == 49){  jQuery(".page-recetas .more-link a").attr("href","http://comaorganico.com").attr('target','_blank'); }
 	}
 
 }	
-jQuery(".more-link a").click();
+setTimeout('masRecetas()', 1000);
+setTimeout('masRecetas()', 2000);
 
 
 jQuery( document ).ajaxComplete(function() {

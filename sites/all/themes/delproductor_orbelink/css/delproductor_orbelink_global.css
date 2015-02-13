@@ -532,7 +532,7 @@ body .region-postscript-full-width{
 }
 .nuestras_recetas_full{
 	background-color: #FDFBF6;
-	padding: 50px 0px;	
+	padding: 30px 0px;	
 }
 .page-recetas .nuestras_recetas_full{
 	background: none;
@@ -611,6 +611,10 @@ body .region-postscript-full-width{
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size:cover;
+	transition: all 0.3s ease 0s;
+}
+.receta:hover{
+	transform: scale(1.05);
 }
 .receta .receta_info{
 	padding: 10px 20px;
@@ -637,10 +641,10 @@ body .region-postscript-full-width{
 }
 .receta .icons_recetas{
 	position:absolute;
-	bottom: 10px;
+	bottom: 5px;
 }
 .receta .icons_recetas img{
-	margin-right: 10px;
+	margin-right: 5px;
 }
 
 .receta:hover a.receta_flecha{
