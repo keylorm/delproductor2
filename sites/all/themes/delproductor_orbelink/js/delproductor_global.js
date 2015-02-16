@@ -1,16 +1,17 @@
 jQuery.noConflict(); 
 jQuery(document).ready(function(){
-	 var submenuopen = 0; var med = 0;
+	 var submenuopen = 0; var open2 = 0;
 	 var mactiv = jQuery('#zone-menu-wrapper #block-system-main-menu .menu .active-trail');
 	 var sbm = mactiv.find(".menu");
 	 if(mactiv.length > 0){
 		submenuopen = 1;
 		if(mactiv.hasClass('menu-expandido-doble')){
 			jQuery('body').addClass('mopen2');
+			var open2 = 1;
 		}
 		jQuery('body').addClass('mopen');
-		var subm2 = mactiv.find(".menu");
-		subm2.show('slow');				 
+		//var subm2 = mactiv.find(".menu");
+		sbm.show('slow');				 
 	 }	
 	
 	jQuery('#zone-menu-wrapper #block-system-main-menu .menu .mp').hover(
@@ -19,30 +20,40 @@ jQuery(document).ready(function(){
 			if(subm[0] != undefined){
 				if(jQuery(this).hasClass('menu-expandido-doble')){
 					jQuery('body').addClass('mopen2');
+				}else{
+					jQuery('body').removeClass('mopen2');
 				}				
 				jQuery('body').addClass('mopen');
 				if(submenuopen==1){
-					sbm.hide('slow');
+					//sbm.hide('slow');
+					sbm.css({display:'none'});
 				}				
-				subm.show('slow');
+				//subm.show('slow');
+				subm.css({display:'block'});
 			}
-			//console.log(subm[0]);
          }, 
          function () {
 		 	var subm = jQuery(this).find(".menu");
-			if(subm[0] != undefined){ console.log(submenuopen);
+			if(subm[0] != undefined){
 			
-				if(jQuery(this).hasClass('menu-expandido-doble')){
-					
-				}			
+				/*if(jQuery(this).hasClass('menu-expandido-doble')){
+					//jQuery('body').removeClass('mopen2');
+				}	*/		
 				if(submenuopen==0){
 					jQuery('body').removeClass('mopen2');
 					jQuery('body').removeClass('mopen');
 					
 				}	
-				subm.hide('slow');
+				//subm.hide('slow');
+				subm.css({display:'none'});
+				if(open2==1){
+					jQuery('body').addClass('mopen2');
+				}else{
+					jQuery('body').removeClass('mopen2');
+				}				
 				if(submenuopen==1){
-					sbm.show('slow');
+					//sbm.show('slow');
+					sbm.css({display:'block'});
 				}
 				
 			}			

@@ -1,4 +1,29 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Pacifico|Proximanova:300,400,500,600,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Pacifico);
+
+@font-face {
+  font-family: 'Proximanova';
+  font-style: normal;
+  font-weight: 300;
+  src: local('ProximaNova Light'), local('ProximaNova-Light'), url(../fonts/ProximaNova-Light.otf) format('otf');
+}
+@font-face {
+  font-family: 'Proximanova';
+  font-style: normal;
+  font-weight: 400;
+  src: local('ProximaNova Regular'), local('ProximaNova-Regular'), url(../fonts/ProximaNova-Regular.otf) format('otf');
+}
+@font-face {
+  font-family: 'Proximanova';
+  font-style: normal;
+  font-weight: 500;
+  src: local('ProximaNova Semibold'), local('ProximaNova-Semibold'), url(../fonts/ProximaNova-Semibold.otf) format('otf');
+}
+@font-face {
+  font-family: 'Proximanova';
+  font-style: normal;
+  font-weight: 600;
+  src: local('ProximaNova Bold'), local('ProximaNova-Bold'), url(../fonts/ProximaNova-Bold.otf) format('otf');
+}
 
 body{
 	background: none !important;
@@ -16,6 +41,7 @@ header #zone-user-wrapper .container-24 .grid-16{
 header #zone-user-wrapper .container-24 .grid-8{
 	width: 240px;
 }
+
 header #zone-user-wrapper .menu li{
   list-style-image:none;
   list-style-type:none;
@@ -227,12 +253,9 @@ body #block-menu-menu-user-menu .content ul.menu li a{
 
 /*** SLIDER ***/
 
-/*section#section-content #zone-content-wrapper .container-24{
-	width: 1280px;
+body .panel-pane.pane-views-home-slider-block{
+	padding: 0px;
 }
-section#section-content #zone-content-wrapper .container-24 .grid-24{
-	width: 1260px;
-}*/
 body .panels-flexible-region-1-center{
 	width: 100%;
 }
@@ -327,13 +350,26 @@ body .panels-flexible-region-1-center{
 	background-image: url('../images/next_slider.png');
 }
 
-.panel-separator{
+.front .panel-separator{
 	width: 100%;
 	clear:both;
-	height: 40px;
+	height: 1px;
+	margin: 0px;
 }
 /* GENERAL */
+.front .panel-pane{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.block{
+	padding: 40px 0px;
+}
 
+.not-front  #block-system-main,
+#zone-preface .block,
+header #zone-user-wrapper #block-menu-menu-top-menu{
+	padding: 0px;
+}
 #section-content .grid-24{
 	display:block;
 	width: 1000px;
@@ -424,8 +460,6 @@ body #breadcrumb .breadcrumb a{
 /*** NUESTRA FILOSIFÍA ***/
 .pane-2 {
 	background-color: #FDFBF6;
-	padding-top: 40px;
-	padding-bottom: 20px;
 }
 .nuestra-filosofia-titulo-bloque h2,
 .nuestros-productores-titulo-bloque h2{
@@ -532,9 +566,13 @@ body .region-postscript-full-width{
 	width: 100% !important;
 	margin: 0px !important;
 }
-.nuestras_recetas_full{
+
+.pane-importar-recetas-importar-recetas,
+.block-importar-recetas-importar-recetas{
 	background-color: #FDFBF6;
-	padding: 30px 0px;	
+}
+.nuestras_recetas_full{
+
 }
 .page-recetas .nuestras_recetas_full{
 	background: none;
@@ -552,6 +590,9 @@ body .region-postscript-full-width{
   background-image: url('../images/filosofia_bgt.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;  
+}
+.pane-importar-recetas-pagina-importar-recetas{
+	padding-top: 0px;
 }
 
 .nuestras-recetas-titulo h2 b{
@@ -766,7 +807,6 @@ body h1#page-title{
 	line-height: 19px;
 }
 
-
 .views-exposed-widget.views-widget-filter-field_caracteristica_del_product_tid {
     width: 635px;
 }
@@ -859,21 +899,22 @@ body h1#page-title{
 	background-position: 91% 88%;
 	transition: all 0.3s ease 0s;
 }
-.front .view-id-p_gina_de_productores .views-row-1{
+
+.view-id-p_gina_de_productores.view-display-id-block_1 .views-row-1{
 	width: 486px;
 	margin-right: 20px;
 }
-.front .view-id-p_gina_de_productores .views-row-2{
+.view-id-p_gina_de_productores.view-display-id-block_1 .views-row-2{
 	width: 486px;
 	margin-right: 0px;
 }
-.front .view-id-p_gina_de_productores .views-row-3{
+ .view-id-p_gina_de_productores.view-display-id-block_1 .views-row-3{
 	width: 315px;
 }
-.front .view-id-p_gina_de_productores .views-row-4{
+.view-id-p_gina_de_productores.view-display-id-block_1 .views-row-4{
 	width: 315px;
 }
-.front .view-id-p_gina_de_productores .views-row-last{
+.view-id-p_gina_de_productores.view-display-id-block_1 .views-row-last{
 	width: 315px;
 	margin-right: 0px;
 }
@@ -982,6 +1023,9 @@ body .more-link a:after{
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #e35755;
+}
+#zone-content-below .block{
+	padding: 0px;
 }
 #zone-content-below h3{
 	font-family: Proximanova, sans-serif;
@@ -1092,6 +1136,19 @@ body .more-link a:after{
 .view-id-productos{
 }
 
+/*Slider*/
+.slider745 .view-home-slider #flexslider-1 .slides li .flex-caption{
+	width: auto;
+}
+.slider745 .view-home-slider #flexslider-1 .slides li .flex-caption p.headline{
+	font-size: 42px;
+}
+.slider745 .view-home-slider #flexslider-1 .slides li .flex-caption p.tagline{
+	font-size: 28px;
+}
+
+
+
 .view-id-productos .views-row{
 	border: 1px solid #6E6F71;
 	float: left;
@@ -1184,3 +1241,4 @@ body .more-link a:after{
 .view-id-productos .views-row .ultima-linea-preciouni-preciototal div{
 	display:inline-block;
 }
+
