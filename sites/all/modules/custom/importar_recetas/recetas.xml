@@ -13,7 +13,7 @@
 	<atom:link href="http://comaorganico.com/category/recetas/feed/" rel="self" type="application/rss+xml" />
 	<link>http://comaorganico.com</link>
 	<description>Coma Organico - Blog de recetas y afición por los productos orgánicos en Costa Rica</description>
-	<lastBuildDate>Fri, 13 Feb 2015 15:41:20 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 13 Feb 2015 17:50:47 +0000</lastBuildDate>
 	<language>es-ES</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -24,10 +24,7 @@
 		<comments>http://comaorganico.com/trufas-de-chocolate-organico/#comments</comments>
 		<pubDate>Thu, 12 Feb 2015 17:58:55 +0000</pubDate>
 		<dc:creator><![CDATA[Roxana Ortiz]]></dc:creator>
-				<category><![CDATA[Bajo en calorías]]></category>
-		<category><![CDATA[Postres]]></category>
-		<category><![CDATA[Sin gluten]]></category>
-		<category><![CDATA[Sin lácteos]]></category>
+				<category><![CDATA[Postres]]></category>
 		<category><![CDATA[chocolate]]></category>
 		<category><![CDATA[coco]]></category>
 		<category><![CDATA[energía]]></category>
@@ -78,10 +75,7 @@
 		<serves>20</serves>
 		<img width="300" height="300">http://comaorganico.com/wp-content/uploads/2015/02/shutterstock_244161418-300x300.jpg</img>
 		<categorias>
-			<categoria id="333">Bajo en calorías</categoria>
 			<categoria id="34">Postres</categoria>
-			<categoria id="331">Sin gluten</categoria>
-			<categoria id="332">Sin lácteos</categoria>
 		</categorias>
 	</item>
 		<item>
