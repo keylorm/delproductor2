@@ -1,5 +1,18 @@
 jQuery.noConflict(); 
 jQuery(document).ready(function(){
+	 var submenuopen = 0; var med = 0;
+	 var mactiv = jQuery('#zone-menu-wrapper #block-system-main-menu .menu .active-trail');
+	 var sbm = mactiv.find(".menu");
+	 if(mactiv.length > 0){
+		submenuopen = 1;
+		if(mactiv.hasClass('menu-expandido-doble')){
+			jQuery('body').addClass('mopen2');
+		}
+		jQuery('body').addClass('mopen');
+		var subm2 = mactiv.find(".menu");
+		subm2.show('slow');				 
+	 }	
+	
 	jQuery('#zone-menu-wrapper #block-system-main-menu .menu .mp').hover(
          function () {
 		 	var subm = jQuery(this).find(".menu");
@@ -8,20 +21,35 @@ jQuery(document).ready(function(){
 					jQuery('body').addClass('mopen2');
 				}				
 				jQuery('body').addClass('mopen');
+				if(submenuopen==1){
+					sbm.hide('slow');
+				}				
 				subm.show('slow');
 			}
 			//console.log(subm[0]);
          }, 
          function () {
 		 	var subm = jQuery(this).find(".menu");
-			if(subm[0] != undefined){
-				jQuery('body').removeClass('mopen');
-				jQuery('body').removeClass('mopen2');
+			if(subm[0] != undefined){ console.log(submenuopen);
+			
+				if(jQuery(this).hasClass('menu-expandido-doble')){
+					
+				}			
+				if(submenuopen==0){
+					jQuery('body').removeClass('mopen2');
+					jQuery('body').removeClass('mopen');
+					
+				}	
 				subm.hide('slow');
+				if(submenuopen==1){
+					sbm.show('slow');
+				}
+				
 			}			
 			//console.log(subm[0]);
          }
      );
+	 
 
 	jQuery("#edit-field-caracteristica-del-product-tid input").click(function(){
 			jQuery("#edit-submit-p-gina-de-productores").click();
