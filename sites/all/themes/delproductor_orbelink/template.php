@@ -73,3 +73,23 @@ function delproductor_orbelink_breadcrumb($variables) {
     return $output;
   }
 }
+
+function delproductor_orbelink_menu_tree__menu_block(&$variables) {
+  return '<ul class="primer-nivel-menu menu">' . $variables['tree'] . '</ul>';
+}
+
+/**
+ * Implements theme_menu_link().
+ */
+function delproductor_orbelink_menu_link(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+    // Wrap in dropdown-menu.
+    unset($element['#below']['#theme_wrappers']);
+    $sub_menu = '<ul class="nivel-interno-menu menu">' . drupal_render($element['#below']) . '</ul>';
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
