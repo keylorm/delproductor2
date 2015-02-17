@@ -68,6 +68,40 @@ jQuery(document).ready(function(){
 	);
 	
 	jQuery(".page-recetas .receta").css({'display':'none'});
+
+	jQuery('.menu-block-4 > .menu > li').click(function(event){
+		var elem = jQuery(this).find('.menu:first');
+		console.log('menu 1');
+		if(elem.is('ul')){
+			event.preventDefault();
+			jQuery('.menu-block-4 .menu > li > ul:visible').not(elem).slideUp();
+			//elem.slideToggle();
+			elem.slideDown('slow');
+		}
+	});
+
+	jQuery('.menu-block-4 > .menu > li .menu > li').click(function(event){
+		var elem = jQuery(this).find('.menu:first');
+		console.log('meno 2');
+		if(elem.is('ul')){
+			event.preventDefault();
+			//jQuery('.menu-block-4 .menu > li > .menu > li > ul:visible').not(elem).slideUp();
+			elem.slideToggle();
+		}
+	});		
+	
+	
+	/*jQuery('.menu-block-4 li').click(function(event){
+		var elem = jQuery(this).find('.menu:first');
+		//jQuery('.menu-block-4 .menu ul:visible').not(elem).slideUp()
+		console.log(elem);
+		if(elem.is('ul')){
+		//	event.preventDefault();
+			//jQuery('.menu-block-4 .menu ul:visible').not(elem).slideUp();
+			//elem.slideToggle();
+			elem.slideDown('slow');
+		}
+	});	*/
 	
 		
 });
