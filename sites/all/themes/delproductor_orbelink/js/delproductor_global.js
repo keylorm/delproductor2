@@ -1,5 +1,8 @@
 jQuery.noConflict(); 
 jQuery(document).ready(function(){
+	
+	
+	/* FUNCIONALIDAD MENÚ PRINCIPAL */
 	 var submenuopen = 0; var open2 = 0;
 	 var mactiv = jQuery('#zone-menu-wrapper #block-system-main-menu .menu .active-trail');
 	 var sbm = mactiv.find(".menu");
@@ -60,7 +63,7 @@ jQuery(document).ready(function(){
 			//console.log(subm[0]);
          }
      );
-	 
+	 /*************************/
 
 	jQuery("#edit-field-caracteristica-del-product-tid input").click(function(){
 			jQuery("#edit-submit-p-gina-de-productores").click();
@@ -69,39 +72,38 @@ jQuery(document).ready(function(){
 	
 	jQuery(".page-recetas .receta").css({'display':'none'});
 
-	jQuery('.menu-block-4 > .menu > li').click(function(event){
+	/* FUNCIONALIDAD MENÚ SIDEBAR */
+	 var m1 = jQuery('.menu-block-4 > ul > .active-trail');
+	 
+	 var sm1 = m1.find(".menu:first");
+	 sm1.prev().addClass('acti1');
+	 
+	 var sm2 = sm1.find(".menu:first");
+	 sm2.prev().addClass('acti2');
+	 
+	 sm1.css({display: 'block'});
+	 sm2.css({display: 'block'});
+
+	jQuery('.menu-block-4 > ul > .lim').click(function(event){
+		jQuery(".menu-block-4 .menu").find('span').removeClass('acti1');
+		jQuery(this).find('span').addClass('acti1');
 		var elem = jQuery(this).find('.menu:first');
-		console.log('menu 1');
 		if(elem.is('ul')){
-			event.preventDefault();
-			jQuery('.menu-block-4 .menu > li > ul:visible').not(elem).slideUp();
-			//elem.slideToggle();
+			jQuery('.lim').find('.menu:first').not(elem).slideUp();
 			elem.slideDown('slow');
 		}
 	});
 
-	jQuery('.menu-block-4 > .menu > li .menu > li').click(function(event){
+	jQuery('.menu-block-4 > .menu > li > ul > li').click(function(event){
+		jQuery(".menu-block-4 .menu li ul").find('span').removeClass('acti2');
+		jQuery(this).find('span').addClass('acti2');
 		var elem = jQuery(this).find('.menu:first');
-		console.log('meno 2');
 		if(elem.is('ul')){
-			event.preventDefault();
-			//jQuery('.menu-block-4 .menu > li > .menu > li > ul:visible').not(elem).slideUp();
-			elem.slideToggle();
+			jQuery('.menu-block-4 .menu > li > ul > li > ul:visible').not(elem).slideUp();
+			elem.slideDown('slow')
 		}
-	});		
-	
-	
-	/*jQuery('.menu-block-4 li').click(function(event){
-		var elem = jQuery(this).find('.menu:first');
-		//jQuery('.menu-block-4 .menu ul:visible').not(elem).slideUp()
-		console.log(elem);
-		if(elem.is('ul')){
-		//	event.preventDefault();
-			//jQuery('.menu-block-4 .menu ul:visible').not(elem).slideUp();
-			//elem.slideToggle();
-			elem.slideDown('slow');
-		}
-	});	*/
+	});	
+	/***************************/
 	
 		
 });
