@@ -73,12 +73,35 @@ jQuery(document).ready(function(){
 	jQuery(".page-recetas .receta").css({'display':'none'});
 
 	/* FUNCIONALIDAD MENÚ SIDEBAR */
+	
+	/* Abre la sección dependiendo de la url que esta actica */
+	if(jQuery('.page-taxonomy-term-78').length > 0){
+		jQuery(".menu-mlid-1666").find('.menu:first').css({display: 'block'});
+		jQuery(".menu-mlid-1666").find('span:first').addClass('acti1');
+	}
+	if(jQuery('.page-taxonomy-term-85').length > 0){
+		jQuery(".menu-mlid-1667").find('.menu:first').css({display: 'block'});
+		jQuery(".menu-mlid-1667").find('span:first').addClass('acti1');
+	}
+	if(jQuery('.page-taxonomy-term-91').length > 0){
+		jQuery(".menu-mlid-1668").find('.menu:first').css({display: 'block'});
+		jQuery(".menu-mlid-1668").find('span:first').addClass('acti1');
+	}
+	if(jQuery('.page-taxonomy-term-100').length > 0){
+		jQuery(".menu-mlid-1669").find('.menu:first').css({display: 'block'});
+		jQuery(".menu-mlid-1669").find('span:first').addClass('acti1');
+	}
+	/*if(jQuery('.page-taxonomy-term-78').length > 0){
+		jQuery(".menu-mlid-1749").find('.menu:first').css({display: 'block'});
+		jQuery(".menu-mlid-1749").find('span:first').addClass('acti1');
+	}*/			
+	
 	 var m1 = jQuery('.menu-block-4 > ul > .active-trail');
 	 
 	 var sm1 = m1.find(".menu:first");
 	 sm1.prev().addClass('acti1');
 	 
-	 var sm2 = sm1.find(".menu:first");
+	 var sm2 = sm1.find(".active-trail:first");
 	 sm2.prev().addClass('acti2');
 	 
 	 sm1.css({display: 'block'});
