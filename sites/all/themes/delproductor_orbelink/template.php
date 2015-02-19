@@ -60,12 +60,13 @@ function delproductor_orbelink_form_alter(&$form, &$form_state, $form_id){
     $form['submit']['#value'] = "Buscar";
   }
 
-  if($form['#attributes']['class'][0]=='commerce-add-to-cart'){
-    $form['#attributes']['data-tooltip'][0]='Añadir al Carrito';
+if(isset($form['#attributes'])){
+    if($form['#attributes']['class'][0]=='commerce-add-to-cart'){
+      $form['submit']['#attributes']['data-tooltip'][0]='Añadir al Carrito';
+    }
+   dpm($form);
   }
-  dpm($form);
 }
-
 
 function delproductor_orbelink_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
