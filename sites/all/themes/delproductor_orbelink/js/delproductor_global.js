@@ -128,8 +128,19 @@ jQuery(document).ready(function(){
 		}
 	});	
 	/***************************/
-	
-		
+
+	/* TABS */
+	jQuery('#ul_tabs > li > a').click(function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+        // Show/Hide Tabs
+        jQuery('.content_tabs .tabs ' + currentAttrValue).show();
+ 
+        // Change/remove current tab to active
+        //jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+
 });
 
 var ordenid = 1;

@@ -1531,3 +1531,182 @@ body .block-productos-block-1 .more-link a{
 	color: #E35755;
 	border-color: #E35755;
 }
+
+
+/* DETALLE PRODUCTO */
+
+.detalle-producto-col-izq{
+	box-sizing: border-box;
+}
+.detalle-producto-col-izq .flexslider{
+	margin: 0px;
+	background: none;
+	border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+.detalle-producto-col-izq .flexslider ul{
+}
+.detalle-producto-col-izq .flexslider ul li{
+	margin: 0px; padding: 0px;
+}
+.detalle-producto-col-izq .flex-control-paging{
+	display: none;
+}
+.detalle-producto-col-izq #flexslider-1 .flex-direction-nav li a{
+	width: 55px;
+	height: 55px;
+	overflow:hidden; 
+	
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.detalle-producto-col-izq #flexslider-1 .flex-direction-nav li a:before{
+  content: '';
+  margin-left: 80px;
+  height: 55px;	
+}
+
+.detalle-producto-col-izq #flexslider-1 .flex-direction-nav a.flex-prev{
+	background-image: url('../images/prev_slider_detalle.png');
+}
+.detalle-producto-col-izq #flexslider-1 .flex-direction-nav a.flex-next{
+	background-image: url('../images/next_slider_detalle.png');
+}
+
+.panels-flexible-panel_content55_right45 .panels-flexible-region.detalle-producto-col-der{
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+
+.detalle-producto-col-der .field-name-field-productor a{
+	font-family: Proximanova, sans-serif;
+	font-weight: 300;
+	font-size: 18px;	
+	color: #6E6F71;
+	text-decoration:underline;
+}
+
+
+.detalle-producto-col-der .pane-node-title h1#page-title{
+	color: #76C9B7;
+	font-family: Proximanova, sans-serif;
+	font-weight: 500;
+	font-size: 29px;
+	text-transform: uppercase;	
+	border-bottom: 1px solid #76C9B7;
+}
+
+.detalle-producto-col-der .box-precio-detalle-producto div{
+	display:inline-block;
+	
+}
+
+.detalle-producto-col-der .box-precio-detalle-producto .precio-total{
+	color: #6E6F71;
+	font-family: Proximanova, sans-serif;
+	font-weight: bold;
+	font-size: 31px;	
+}
+.detalle-producto-col-der .box-precio-detalle-producto .precio-total span{
+	color: #A7A9AC;
+}
+.detalle-producto-col-der .box-precio-detalle-producto .precio-unidad{
+	font-family: Proximanova, sans-serif;
+	font-weight: 300;
+	font-size: 19px;
+	color: #58595B;	
+	float:right;
+	line-height: 49px;
+}
+
+.field-type-commerce-product-reference .form-item-quantity{
+	float:left;
+	margin-bottom: 20px;
+	clear:both;
+}
+
+.field-type-commerce-product-reference .form-item-quantity label{
+	display: block;
+	font-family: Proximanova, sans-serif;
+	font-weight: 500;
+	font-size: 18px;	
+	color: #6E6F71;
+	float:left;
+	line-height: 50px;
+}
+.field-type-commerce-product-reference .form-item-quantity input{
+	display: block;
+	border: 1px solid #D1D3D4;
+	height: 50px;
+	width: 100px !important;
+	float:left;
+	margin-left: 100px;
+}
+.field-type-commerce-product-reference .form-item-quantity span.ui-spinner{
+	float:left;
+}
+.field-type-commerce-product-reference .form-submit{
+	font-family: Proximanova, sans-serif;
+	font-weight: normal;
+	font-size: 18px;	
+	background: none;
+	background-color: #E35755;
+	border: none;
+	color: #FFF;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	float:right;
+}
+.field-type-commerce-product-reference .form-item-quantity:after{
+	content: ' ';
+	width: 135px;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	background-color: #E35755;
+	top: 106px;
+}
+
+
+.view-bloques-detalle-productos #ul_tabs{
+	width: 100%;
+	text-align:center;
+	margin: 0px; padding: 0px;
+}
+.view-bloques-detalle-productos #ul_tabs li{
+	display:inline-block;
+}
+.view-bloques-detalle-productos #ul_tabs li a{
+	display:block;
+	color: #58595B;
+	font-family: Proximanova, sans-serif;
+	font-weight: 500;
+	font-size: 20px;
+	text-transform: uppercase;
+	height: 30px;
+	border: 1px solid #AFB1B3;
+	border-bottom: none;
+	padding: 10px 10px;
+}
+.view-bloques-detalle-productos .content_tabs{
+	border: 1px solid #AFB1B3;
+	box-sizing: border-box;
+	padding: 30px;
+}
+
+.view-bloques-detalle-productos .content_tabs .tabs{
+	display: none;
+}
+.view-bloques-detalle-productos .content_tabs .tabs.active{
+	display: block;
+}
+
+/*********************/
