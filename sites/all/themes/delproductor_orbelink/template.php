@@ -64,7 +64,7 @@ if(isset($form['#attributes'])){
     if($form['#attributes']['class'][0]=='commerce-add-to-cart'){
       $form['#attributes']['data-tooltip'][0]='Añadir al Carrito';
     }
-   dpm($form);
+   //dpm($form);
   }
 }
 
