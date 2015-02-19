@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file Installation file for commerce_popular_products custom module.
+ *
+ * Includes various update functions for managing configuration deployment.
+ */
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function commerce_popular_products_uninstall() {
+  variable_del('commerce_popular_products_time');
+  variable_del('commerce_popular_products_number');
+  variable_del('commerce_popular_products_products');
+  variable_del('commerce_popular_products_title');
+}

@@ -1,0 +1,304 @@
+<?php
+
+/**
+ * @file
+ * Block content based upon popular products this month
+ */
+
+/**
+ * Implements hook_commerce_checkout_complete().
+ */
+function commerce_popular_products_commerce_checkout_complete($order) {
+  // Update our cache of popular products.
+  commerce_popular_products_get_product();
+}
+
+/**
+ * Build up a query based upon settings and retrieve products.
+ */
+function commerce_popular_products_get_product() {
+  // Fetch settings for use.
+  $time = variable_get('commerce_popular_products_time', 'month');
+  $products = variable_get('commerce_popular_products_products');
+  if (isset($products)) {
+    // Gather information on all the Commerce product reference fields in use.
+    $fields = field_info_fields();
+    $product_references = array();
+    foreach ($fields as $key => $field) {
+      if ($field['type'] == 'commerce_product_reference') {
+        if ($key != 'commerce_product') {
+          $product_references[] = $key;
+        }
+      }
+    }
+    // Turn the time period into something we can use with FROM_UNIXTIME().
+    $time_period = '';
+    switch ($time) {
+      case 'day':
+        $time_period = 'D';
+        break;
+
+      case 'week':
+        $time_period = 'u';
+        break;
+
+      case 'month':
+        $time_period = 'M';
+        break;
+
+      case 'year':
+        $time_period = 'Y';
+        break;
+
+    }
+    // Create an array to hold all our results for different product types.
+    $all_results = array();
+    // For each product reference type.
+    foreach ($product_references as $table) {
+      // Build query to find the most bought product for the current month.
+      $query = db_select('commerce_order', 'co');
+      $query->join('commerce_line_item', 'cli', 'cli.order_id = co.order_id');
+      $query->join('commerce_product', 'cp', 'cp.sku = cli.line_item_label');
+      // Add in joins to field data tables for all the product reference fields.
+      $query->rightJoin('field_data_' . $table, $table, $table . '.' . $table . '_product_id = cp.product_id');
+      $query->addField($table, 'entity_id', 'entity_id');
+      // Continue building the query.
+      $query->addExpression(
+        'FROM_UNIXTIME(co.changed, :M1)',
+        'order_time',
+        array(':M1' => $time_period));
+      $query->fields('cp', array('product_id', 'title'));
+      $query->addExpression('SUM(cli.quantity)', 'sum');
+      $query->condition(
+        'co.status',
+        array('pending', 'completed', 'checkout_complete'),
+        'in');
+      $product_types = array();
+      foreach ($products as $key => $product) {
+        $product_types[] = $product;
+      }
+      $query->condition('cli.type', $product_types);
+      // Deal with the different time periods.
+      switch ($time) {
+        case 'day':
+          $query->where("co.changed > (unix_timestamp(now()) - 86400)  ");
+          break;
+
+        case 'week':
+          $query->where("co.changed > (unix_timestamp(now()) - 604800)  ");
+          break;
+
+        case 'month':
+          $query->where("co.changed > (unix_timestamp(now()) - 2629743)  ");
+          break;
+
+      }
+      $query->groupBy('order_time');
+      $query->groupBy('cp.product_id');
+      $query->groupBy('cp.title');
+      $result = $query->execute();
+      foreach ($result as $record) {
+        $product = $record->entity_id;
+        $count = $record->sum;
+        $all_results[] = array('id' => $product, 'count' => $count);
+      }
+    }
+    // Sort the Array.
+    $count = array();
+    foreach ($all_results as $key => $row) {
+      $count[$key]  = $row['count'];
+    }
+    array_multisort($count, SORT_DESC, $all_results);
+    // Call the views to display N items.
+    variable_set('commerce_popular_products_popular_products', $all_results);
+    return $all_results;
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function commerce_popular_products_block_info() {
+  // A block To display a popular product.
+  $blocks['popular-product-block'] = array(
+    'info' => t('Commerce Popular Products display block'),
+    'weight' => '-50',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function commerce_popular_products_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'popular-product-block':
+      $block['subject'] = check_plain(variable_get('commerce_popular_products_title'));
+      $block['content'] = commerce_popular_products_get_content();
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Helper function to produce block content.
+ */
+function commerce_popular_products_get_content() {
+  $output = '';
+  $number = variable_get('commerce_popular_products_number', '1');
+  $all_results = variable_get('commerce_popular_products_popular_products');
+  if ($all_results == NULL) {
+    $all_results = commerce_popular_products_get_product();
+  }
+  $i = 0;
+  $view_count = 0;
+  while ($i < $number) {
+    // For each returned row, get the product's ID and go fetch the View.
+    if (isset($all_results[$i])) {
+      $product = $all_results[$i]['id'];
+      $view = views_embed_view('popular_commerce_products', 'popular_products_block', $product);
+      $output .= $view;
+      $view_count++;
+    }
+    $i++;
+  }
+  if ($view_count == 0) {
+    $output = '';
+  }
+  return $output;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function commerce_popular_products_menu() {
+  $items['admin/commerce/config/popular-products'] = array(
+    'title' => 'Popular Commerce Products settings',
+    'description' => 'Manage settings for defining a popular products block.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('commerce_popular_products_settings_form'),
+    'access arguments' => array('Configure store settings '),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_form().
+ *
+ * Produces the Settings Page form.
+ */
+function commerce_popular_products_settings_form($form, &$form_state) {
+  $time = variable_get('commerce_popular_products_time', 'month');
+  $number = variable_get('commerce_popular_products_number', '1');
+  $products = variable_get('commerce_popular_products_products');
+  $title = check_plain(variable_get('commerce_popular_products_title', 'Popular Products This Month'));
+  $product_types = commerce_popular_products_get_product_types();
+  $form['preamble'] = array(
+    '#markup' => '<p>' . t('Here you can define which product types are ranked for popularity & the period over which they are ranked.') . '</p>',
+  );
+  $form['commerce_popular_products_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Block title.'),
+    '#description' => t('The title of the "popular products" block as shown to users.'),
+    '#default_value' => $title,
+  );
+  if (isset($product_types)) {
+    $form['commerce_popular_products_products'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Product Types.'),
+      '#description' => t('Product nodes to include in the popularity check.'),
+    );
+  }
+  else {
+    $markup = '<h4>' . t('Product types') . '</h4>';
+    $markup .= '<p>' . t('You have not defined any product types. You need to <a href = "@add-product-page">define some</a> first.', array('@add-product-page' => url('/admin/commerce/products/types/add'))) . '</p>';
+    $form['product_types'] = array(
+      '#title' => t('Product Types.'),
+      '#markup' => $markup,
+    );
+  }
+
+  $options = array();
+  foreach ($product_types as $type) {
+    $options[$type] = $type;
+  }
+  $form['commerce_popular_products_products']['#options'] = $options;
+  if (empty($products)) {
+    $products = array();
+    foreach ($product_types as $type) {
+      $products[$type] = 0;
+    }
+  }
+  $form['commerce_popular_products_products']['#default_value'] = $products;
+  $form['commerce_popular_products_time'] = array(
+    '#type' => 'radios',
+    '#title' => t('Timeframe.'),
+    '#description' => t('The timeframe within which to calculate popularity.'),
+    '#options' => array(
+      'day' => t('Day'),
+      'week' => t('Week'),
+      'month' => t('Month'),
+      'year' => t('Year'),
+    ),
+    '#default_value' => $time,
+  );
+  $form['commerce_popular_products_number'] = array(
+    '#type' => 'select',
+    '#title' => t('Display.'),
+    '#description' => t('How may ranked popular products would you like included in the display?'),
+    '#options' => array(
+      '1' => '1',
+      '2' => '2',
+      '3' => '3',
+      '4' => '4',
+      '5' => '5',
+      '6' => '6',
+      '7' => '7',
+      '8' => '8',
+      '9' => '9',
+      '10' => '10',
+    ),
+    '#default_value' => $number,
+  );
+  $form['#submit'][] = 'commerce_popular_products_settings_form_submit';
+
+  return system_settings_form($form);
+}
+
+/**
+ * Custom submit handler for settings form.
+ */
+function commerce_popular_products_settings_form_submit($form, &$form_state) {
+  // Update our cache of popular products.
+  commerce_popular_products_get_product();
+}
+
+/**
+ * A simple query to return all the Commerce product types in the database.
+ */
+function commerce_popular_products_get_product_types() {
+  $names = array();
+  $products = commerce_product_types();
+  foreach ($products as $item) {
+    $names[] = $item['name'];
+  }
+  return $names;
+}
+
+
+/**
+ * Implements hook_views_api().
+ *
+ * Makes hooking into Views possible.
+ */
+function commerce_popular_products_views_api() {
+
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'commerce_popular_products'),
+  );
+}
