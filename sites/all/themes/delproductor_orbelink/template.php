@@ -48,6 +48,7 @@ function delproductor_orbelink_preprocess_page(&$variables) {
     $variables['page']['content']['content']['#grid_container'] = 0;
     $variables['page']['content']['content_below']['#grid_container'] = 0;
     $variables['page']['content']['postscript']['#grid_container'] = 0;
+
   
 }
 
@@ -58,6 +59,11 @@ function delproductor_orbelink_form_alter(&$form, &$form_state, $form_id){
   if($form_id=='views_exposed_form'){
     $form['submit']['#value'] = "Buscar";
   }
+
+  if($form['#attributes']['class'][0]=='commerce-add-to-cart'){
+    $form['#attributes']['data-tooltip'][0]='Añadir al Carrito';
+  }
+  dpm($form);
 }
 
 
