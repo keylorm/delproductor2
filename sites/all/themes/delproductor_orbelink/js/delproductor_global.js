@@ -101,7 +101,8 @@ jQuery(document).ready(function(){
 	 var sm1 = m1.find(".menu:first");
 	 sm1.prev().addClass('acti1');
 	 
-	 var sm2 = sm1.find(".active-trail:first");
+	 var sm2 = sm1.find(".active-trail:first"); console.log(sm2);
+	 sm2 = sm2.find(".menu");
 	 sm2.prev().addClass('acti2');
 	 
 	 sm1.css({display: 'block'});
