@@ -101,7 +101,7 @@ jQuery(document).ready(function(){
 	 var sm1 = m1.find(".menu:first");
 	 sm1.prev().addClass('acti1');
 	 
-	 var sm2 = sm1.find(".active-trail:first"); console.log(sm2);
+	 var sm2 = sm1.find(".active-trail:first");
 	 sm2 = sm2.find(".menu");
 	 sm2.prev().addClass('acti2');
 	 
@@ -130,15 +130,16 @@ jQuery(document).ready(function(){
 	/***************************/
 
 	/* TABS */
-	jQuery('#ul_tabs > li > a').click(function(e)  {
+	jQuery('#ultabs > li > a').click(function(e)  { e.preventDefault();
         var currentAttrValue = jQuery(this).attr('href');
         // Show/Hide Tabs
-        jQuery('.content_tabs .tabs ' + currentAttrValue).show();
+		jQuery('.content_tabs > .tab').hide();
+        jQuery('.content_tabs > '+currentAttrValue).fadeIn(400);
  
         // Change/remove current tab to active
-        //jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
  
-        e.preventDefault();
+        
     });
 
 });
