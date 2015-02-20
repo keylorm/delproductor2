@@ -49,10 +49,10 @@ function delproductor_orbelink_preprocess_page(&$variables) {
     $variables['page']['content']['content_below']['#grid_container'] = 0;
     $variables['page']['content']['postscript']['#grid_container'] = 0;
 
-  
+  //dpm($variables);
 }
 
-function delproductor_orbelink_form_alter(&$form, &$form_state, $form_id){
+function delproductor_orbelink_form_alter(&$form, &$form_state, $form_id, &$variables){
 /*  if($form_id=='views_exposed_form'){
     $form['field_caracteristica_del_product_tid']['#options']['All'] = "Todos";
   }*/
@@ -60,12 +60,19 @@ function delproductor_orbelink_form_alter(&$form, &$form_state, $form_id){
     $form['submit']['#value'] = "Buscar";
   }
 
-if(isset($form['#attributes'])){
-    if($form['#attributes']['class'][0]=='commerce-add-to-cart'){
-      $form['#attributes']['data-tooltip'][0]='Añadir al Carrito';
+ //dpm(_pathauto_get_schema_alias_maxlength());
+ /* if(arg(0) != 'alimentos'){
+  //if($variables['node']->type != 'alimentos'){
+    if(isset($form['#attributes'])){
+      if($form['#attributes']['class'][0]=='commerce-add-to-cart'){
+        $form['#attributes']['data-tooltip'][0]='Añadir al Carrito';
+      }
+     
     }
-   //dpm($form);
   }
+dpm($form);*/
+
+  
 }
 
 function delproductor_orbelink_breadcrumb($variables) {

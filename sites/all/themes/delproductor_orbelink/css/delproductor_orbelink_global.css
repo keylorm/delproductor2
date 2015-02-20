@@ -1138,6 +1138,8 @@ body .more-link a:after{
 	transition: all 0.3s ease 0s;
 }
 
+
+
 /* Hide the tooltip content by default */
 [data-tooltip]:before,
 [data-tooltip]:after {
