@@ -1535,8 +1535,12 @@ body .block-productos-block-1 .more-link a{
 
 /* DETALLE PRODUCTO */
 
-.detalle-producto-col-izq{
+.detalle-producto-col-izq,
+.detalle-producto-col-der{
 	box-sizing: border-box;
+	display:inline-block;
+	*zoom: 1;
+	*display: inline;		
 }
 .detalle-producto-col-izq .flexslider{
 	margin: 0px;
@@ -1604,27 +1608,35 @@ body .block-productos-block-1 .more-link a{
 	border-bottom: 1px solid #76C9B7;
 }
 
-.detalle-producto-col-der .box-precio-detalle-producto div{
+/*.detalle-producto-col-der .box-precio-detalle-producto div{
 	display:inline-block;
-	
-}
+	*zoom: 1;
+	*display: inline;
+}*/
 
 .detalle-producto-col-der .box-precio-detalle-producto .precio-total{
 	color: #6E6F71;
 	font-family: Proximanova, sans-serif;
 	font-weight: bold;
-	font-size: 31px;	
+	font-size: 31px;
+	display:inline-block;
+	*zoom: 1;
+	*display: inline;		
 }
 .detalle-producto-col-der .box-precio-detalle-producto .precio-total span{
 	color: #A7A9AC;
+	font-size: 28px;
 }
 .detalle-producto-col-der .box-precio-detalle-producto .precio-unidad{
 	font-family: Proximanova, sans-serif;
 	font-weight: 300;
-	font-size: 19px;
+	font-size: 17px;
 	color: #58595B;	
 	float:right;
 	line-height: 49px;
+	display:inline-block;
+	*zoom: 1;
+	*display: inline;	
 }
 
 .field-type-commerce-product-reference .form-item-quantity{
@@ -1646,9 +1658,15 @@ body .block-productos-block-1 .more-link a{
 	display: block;
 	border: 1px solid #D1D3D4;
 	height: 50px;
-	width: 100px !important;
+	width: 200px !important;
+	text-align: left !important;
+	color: #6E6F71;
 	float:left;
-	margin-left: 100px;
+	margin-left: 10px;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 15px;
+	font-weight:bold;
+	padding-left: 10px;	
 }
 .field-type-commerce-product-reference .form-item-quantity span.ui-spinner{
 	float:left;
@@ -1676,15 +1694,18 @@ body .block-productos-block-1 .more-link a{
 }
 
 
-.view-bloques-detalle-productos #ul_tabs{
+.view-bloques-detalle-productos #ultabs{
 	width: 100%;
 	text-align:center;
 	margin: 0px; padding: 0px;
 }
-.view-bloques-detalle-productos #ul_tabs li{
+.view-bloques-detalle-productos #ultabs li{
 	display:inline-block;
+  *zoom: 1;
+  *display: inline;		
+  
 }
-.view-bloques-detalle-productos #ul_tabs li a{
+.view-bloques-detalle-productos #ultabs li a{
 	display:block;
 	color: #58595B;
 	font-family: Proximanova, sans-serif;
@@ -1695,18 +1716,143 @@ body .block-productos-block-1 .more-link a{
 	border: 1px solid #AFB1B3;
 	border-bottom: none;
 	padding: 10px 10px;
+	outline: none;
+}
+.view-bloques-detalle-productos #ultabs li.active a{
+	color: #E35755;
+	padding-bottom: 20px;
+	margin-bottom: -10px;
+	background-color: #FFF;
 }
 .view-bloques-detalle-productos .content_tabs{
 	border: 1px solid #AFB1B3;
 	box-sizing: border-box;
 	padding: 30px;
 }
-
-.view-bloques-detalle-productos .content_tabs .tabs{
+.view-bloques-detalle-productos .content_tabs .tab{
 	display: none;
 }
-.view-bloques-detalle-productos .content_tabs .tabs.active{
+.view-bloques-detalle-productos .content_tabs .tab.active{
 	display: block;
 }
+.view-bloques-detalle-productos .content_tabs{
+	color: #58595B;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	font-weight:300;	
+}
+
+
+.view-bloques-detalle-productos .content_tabs h3{
+	color: #76C9B7;
+	font-family: Proximanova, sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	text-transform: uppercase;
+	margin-bottom: 5px;	
+}
+
+
+.view-bloques-detalle-productos .content_tabs .tags{
+}
+
+.view-bloques-detalle-productos .content_tabs .tags ul{
+	margin: 0px; padding: 0px; margin-bottom: 15px;
+}
+.view-bloques-detalle-productos .content_tabs .tags ul li{
+	display: inline-block;
+  *zoom: 1;
+  *display: inline;	
+	margin-left: 0px;
+	margin-right: 4px;
+}
+.view-bloques-detalle-productos .content_tabs .tags ul li a{
+	display:block;
+	background-color: #F7F1E1;
+	color: #AB9B6E;
+	background-image: url(../images/icon_tag.png);
+	background-repeat: no-repeat;
+	background-position: 10% 50%;
+	padding: 10px 20px 10px 30px;
+}
+
+.view-bloques-detalle-productos .content_tabs .dias-entrega{
+	
+}
+.view-bloques-detalle-productos .content_tabs .dias-entrega .grupo-dias{
+	
+}
+.view-bloques-detalle-productos .content_tabs .dias-entrega .grupo-dias div{
+	width: 31px;
+	height: 31px;
+	font-family: Proximanova, sans-serif;
+	font-weight: 500;
+	font-size: 20px;
+	text-align: center;
+	line-height: 34px;
+	background-color: #808285;	
+	display:inline-block;
+  *zoom: 1;
+  *display: inline;	
+	margin-left: 5px;
+	color: #FFF;
+}
+.view-bloques-detalle-productos .content_tabs .dias-entrega .grupo-dias.Lun .dia-lun,
+.view-bloques-detalle-productos .content_tabs .dias-entrega .grupo-dias.Mar .dia-mar,
+.view-bloques-detalle-productos .content_tabs .dias-entrega .grupo-dias.Mie .dia-mie,
+.view-bloques-detalle-productos .content_tabs .dias-entrega .grupo-dias.Jue .dia-jue,
+.view-bloques-detalle-productos .content_tabs .dias-entrega .grupo-dias.Vie .dia-vie,
+.view-bloques-detalle-productos .content_tabs .dias-entrega .grupo-dias.Sab .dia-sab{
+	background-color: #76C9B7 !important;
+}
+
+
+.view-bloques-detalle-productos .content_tabs .productor-image-box{
+	display:inline-block;
+	*zoom: 1;
+	*display: inline;		
+	margin-right: 20px;
+}
+.view-bloques-detalle-productos .content_tabs .productor-descri-box{
+	display:inline-block;
+	*zoom: 1;
+	*display: inline;		
+	
+}
+.view-bloques-detalle-productos .content_tabs .p-name h3{
+	margin-bottom: 0px;
+}
+.view-bloques-detalle-productos .content_tabs .p-name h3 a{
+	color: #6E6F71;
+	font-family: Proximanova, sans-serif;
+	font-weight: bold;
+	font-size: 14px;	
+	text-transform: uppercase;
+}
+.view-bloques-detalle-productos .content_tabs .p-ubicacion{
+	color: #6E6F71;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	font-weight:normal;		
+}
+.view-bloques-detalle-productos .content_tabs .p-descripcion{
+	color: #6E6F71;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	font-weight:normal;	
+	margin-top: 5px;
+}
+.view-bloques-detalle-productos .content_tabs .ver-todos{
+	display: block;
+	font-family: Proximanova, sans-serif;
+	font-weight: 500;
+	font-size: 13px;	
+	text-transform: uppercase;
+	color: #6E6F71;
+	border: 2px solid #6E6F71;
+	padding: 8px 20px;
+}
+
+
 
 /*********************/
