@@ -1283,7 +1283,7 @@ body .more-link a:after{
 	background-image: url('../images/add.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	text-indent: 200%;
+	text-indent: 200px;
 	white-space: nowrap;
 	/*overflow: hidden;*/
 	display: none;
