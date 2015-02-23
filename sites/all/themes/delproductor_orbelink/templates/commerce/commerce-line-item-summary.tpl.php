@@ -28,14 +28,16 @@
     <span class="line-item-total-label"><?php print $total_label; ?></span> <span class="line-item-total-raw"><?php print $total; ?></span>
   </div>
   <?php endif; ?>
-  <?php if ($quantity_raw): ?>
+  
   <div class="line-item-quantity">
-    <span class="line-item-quantity-raw"><?php print $quantity_raw; ?></span> <!--<span class="line-item-quantity-label"><?php print $quantity_label; ?></span>-->
+      <?php if ($quantity_raw): ?>
+          <span class="line-item-quantity-raw"><?php print $quantity_raw; ?></span> <!--<span class="line-item-quantity-label"><?php print $quantity_label; ?></span>-->
+        
+      <?php else: ?>
+        
+          <span class="line-item-quantity-raw">0</span> <!--<span class="line-item-quantity-label"><?php print $quantity_label; ?></span>-->
+        
+      <?php endif; ?>
   </div>
-<?php else: ?>
-  <div class="line-item-quantity">
-    <span class="line-item-quantity-raw">0</span> <!--<span class="line-item-quantity-label"><?php print $quantity_label; ?></span>-->
-  </div>
-  <?php endif; ?>
   <?php print $links; ?>
 </div>
