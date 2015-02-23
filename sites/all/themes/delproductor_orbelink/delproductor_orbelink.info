@@ -31,6 +31,9 @@ regions[preface_second] = Preface Second
 regions[preface_third] = Preface Third
 
 regions[before_content] = Before Content
+
+regions[despues_contenido] = Despues Contenido 
+
 regions[after_content] = After Content
 
 regions[postscript_full_width] = Postscript Full Width
@@ -55,6 +58,7 @@ zones[menu] = Menu
 zones[header] = Header
 zones[preface] = Preface
 zones[content] = Content
+zones[despues_contenido] = Despues Contenido
 zones[content_below] = Content Below
 zones[postscript] = Postscript
 zones[footer] = Footer first
