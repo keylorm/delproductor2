@@ -32,6 +32,10 @@
   <div class="line-item-quantity">
     <span class="line-item-quantity-raw"><?php print $quantity_raw; ?></span> <!--<span class="line-item-quantity-label"><?php print $quantity_label; ?></span>-->
   </div>
+<?php else: ?>
+  <div class="line-item-quantity">
+    <span class="line-item-quantity-raw">0</span> <!--<span class="line-item-quantity-label"><?php print $quantity_label; ?></span>-->
+  </div>
   <?php endif; ?>
   <?php print $links; ?>
 </div>
