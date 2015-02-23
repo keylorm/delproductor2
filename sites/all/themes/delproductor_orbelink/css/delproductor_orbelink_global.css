@@ -134,6 +134,16 @@ header #block-views-exp-display-products-page{
 #zone-branding-wrapper{
 	/*background-color: #FFF;*/
 }
+.logo-img{
+	transition: all 500ms ease;
+}
+.logo-img:hover{
+	transform: scale(1.04);
+}
+
+.block-shopping-cart-block{
+	
+}
 
 /*** MENÚ PRINCIPAL ***/
 
@@ -160,6 +170,7 @@ header #block-views-exp-display-products-page{
 #block-menu-menu-user-menu{
 	position: absolute;
 	right: 0;
+	margin: 0px; padding: 0px;
 	margin-top: -70px;
 }
 #block-menu-menu-user-menu.block-menu-user-menu .block-inner{
@@ -759,7 +770,7 @@ body .region-postscript-full-width{
 /*.pane-importar-recetas-importar-recetas*/
 .more-link a:after,
 .more-link a:before{
-	display: none;
+	/*display: none;*/
 }
 
 
@@ -822,8 +833,13 @@ footer .block-block ul li ul li a{
   text-decoration: none;
   margin-bottom: 0px;
 }
+footer .block-block{
+	padding: 0px;
+}
 footer #block-block-2 a{
 	color:#FFF;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 14px;	
 }
 footer #block-block-2 .footer-redes-box a{
 	margin-right: 5px;
@@ -946,9 +962,9 @@ body h1#page-title{
 	margin-bottom: 24px;
 	display:block;
 	float:left;
-	/*background-image: url('../images/flecha_der.png');*/
+	/*background-image: url('../images/flecha_der.png');
 	background-repeat: no-repeat;
-	background-position: 91% 88%;
+	background-position: 91% 88%;*/
 	transition: all 0.3s ease 0s;
 }
 
@@ -976,7 +992,7 @@ body h1#page-title{
 
 .page-productores .views-row:hover .views-field-path span a,
 .view-id-p_gina_de_productores .views-row:hover .views-field-path span a{
-	background-position: 90% 50%;
+	background-position: 60% 50%;
 }
 .page-productores .views-row:hover,
 .view-id-p_gina_de_productores .views-row:hover{
@@ -1061,7 +1077,7 @@ body .more-link a{
 	position:relative;
 }
 
-body .more-link a:before{
+body .view-p-gina-de-productores .more-link a:before{
 	position:absolute;
 	content: ' ';
 	width: 50px;
@@ -1072,7 +1088,7 @@ body .more-link a:before{
 	background-position:center;
 	left: -70px;
 }
-body .more-link a:after{
+body .view-p-gina-de-productores .more-link a:after{
 	position:absolute;
 	content: ' ';
 	width: 50px;
@@ -1440,6 +1456,7 @@ body .more-link a:after{
 	text-transform: uppercase;
 	width: 100%;
 	height: 32px;
+	letter-spacing: 0.8px;
 	line-height: 35px;
 	background-image: url(../images/flecha_sub_productos_c.png);
 	background-repeat: no-repeat;
@@ -1462,6 +1479,9 @@ body .more-link a:after{
 	margin-bottom: 1px;
 	margin-top: 1px;
 }
+.menu-block-4 > .menu > li > ul > li > ul{
+	padding: 15px 0px 15px 0px;
+}
 .menu-block-4 > .menu > li > ul > li > ul > li{
 	box-sizing: border-box;
 	margin: 0px; padding: 0px;
@@ -1473,12 +1493,12 @@ body .more-link a:after{
 	display: block;
 	color: #414042;
 	font-family:'Source Sans Pro', sans-serif;
-	font-size: 13px;
+	font-size: 13.5px;
 	font-weight:300;
 	box-sizing: border-box;
 	margin: 0px; padding: 0px;
 	padding-left: 20px;
-	line-height: 22px;
+	line-height: 25px;
 }
 .menu-block-4 > .menu > li > ul > li > ul > li > a:hover,
 .menu-block-4 > .menu > li > ul > li > ul > li.active > a,
@@ -1685,16 +1705,57 @@ body .block-productos-block-1 .more-link a{
 	padding: 10px 20px;
 	float:right;
 }
-.field-type-commerce-product-reference .form-item-quantity:after{
-	content: ' ';
+.field-type-commerce-product-reference .linearoja{
 	width: 135px;
 	height: 2px;
-	position: absolute;
-	left: 0;
+	position: relative;
 	background-color: #E35755;
-	top: 106px;
+	margin-top: 30px;
+	margin-bottom: -23px;
 }
 
+.share-this-box{
+	margin-top: 50px;
+	width: 220px;
+	float: right;
+}
+.share-this-box span{
+	color: #6E6F71;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 12px;
+	font-weight:normal;
+	text-transform: uppercase;
+	line-height: 37px;
+	height: 35px;
+	float:left;	
+}
+.share-this-box .compart{
+	margin-right: 10px;
+}
+
+.share-this-box .st_facebook_large .stLarge{
+	background-image: url('../images/cp_fb.png') !important;
+}
+.share-this-box .st_twitter_large .stLarge{
+	background-image: url('../images/cp_tw.png') !important;
+}
+.share-this-box .st_instagram_large .stLarge{
+	background-image: url('../images/cp_in.png') !important;
+}
+.share-this-box .st_pinterest_large .stLarge{
+	background-image: url('../images/cp_pi.png') !important;
+}
+.share-this-box .stButton{
+	margin: 0px; padding: 0px;
+}
+.share-this-box .stLarge:hover{
+	background-position: center !important;
+}
+.share-this-box .stLarge{
+	width: 35px !important;
+	height: 35px !important;
+	margin: 0px; padding: 0px;
+}
 
 .view-bloques-detalle-productos #ultabs{
 	width: 100%;
@@ -1755,16 +1816,13 @@ body .block-productos-block-1 .more-link a{
 }
 
 
-.view-bloques-detalle-productos .content_tabs .tags{
-}
-
 .view-bloques-detalle-productos .content_tabs .tags ul{
 	margin: 0px; padding: 0px; margin-bottom: 15px;
 }
 .view-bloques-detalle-productos .content_tabs .tags ul li{
 	display: inline-block;
-  *zoom: 1;
-  *display: inline;	
+	*zoom: 1;
+	*display: inline;	
 	margin-left: 0px;
 	margin-right: 4px;
 }
@@ -1794,8 +1852,8 @@ body .block-productos-block-1 .more-link a{
 	line-height: 34px;
 	background-color: #808285;	
 	display:inline-block;
-  *zoom: 1;
-  *display: inline;	
+	*zoom: 1;
+	*display: inline;	
 	margin-left: 5px;
 	color: #FFF;
 }
@@ -1811,15 +1869,16 @@ body .block-productos-block-1 .more-link a{
 
 .view-bloques-detalle-productos .content_tabs .productor-image-box{
 	display:inline-block;
+	width: 50%;
 	*zoom: 1;
 	*display: inline;		
 	margin-right: 20px;
 }
 .view-bloques-detalle-productos .content_tabs .productor-descri-box{
 	display:inline-block;
+	width: 50%;
 	*zoom: 1;
 	*display: inline;		
-	
 }
 .view-bloques-detalle-productos .content_tabs .p-name h3{
 	margin-bottom: 0px;
@@ -1831,16 +1890,18 @@ body .block-productos-block-1 .more-link a{
 	font-size: 14px;	
 	text-transform: uppercase;
 }
+
 .view-bloques-detalle-productos .content_tabs .p-ubicacion{
 	color: #6E6F71;
 	font-family:'Source Sans Pro', sans-serif;
 	font-size: 13px;
 	font-weight:normal;		
 }
-.view-bloques-detalle-productos .content_tabs .p-descripcion{
+.view-bloques-detalle-productos .content_tabs .p-descripcion p,
+.view-bloques-detalle-productos .content_tabs .detalles-producto p{
 	color: #6E6F71;
 	font-family:'Source Sans Pro', sans-serif;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight:normal;	
 	margin-top: 5px;
 }

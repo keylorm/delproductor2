@@ -144,7 +144,8 @@ jQuery(document).ready(function(){
 
 
    /* Para añadir leyenda en  Add to cart*/
-   jQuery('.node-type-alimentos .form-item-quantity').after('<div class="mensaje-cantidad-add-to-cart"><span>Éste producto se va a agregar a su canasta según el día de entrega del productor.</span></div>')
+   jQuery('.node-type-alimentos .form-item-quantity').after('<div class="mensaje-cantidad-add-to-cart"><span>Éste producto se va a agregar a su canasta según el día de entrega del productor.</span></div>\
+   <div class="linearoja"></div>')
 
 });
 
