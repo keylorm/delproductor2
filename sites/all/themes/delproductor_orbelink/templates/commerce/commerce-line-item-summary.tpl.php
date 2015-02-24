@@ -21,6 +21,58 @@
  * @see template_process()
  */
 ?>
+<div class="selector-fecha-entrega">
+  <select id="select-fecha-entrega">
+    <?php 
+      for($i=0;$i<3;$i++){
+        $nextTuesday = strtotime('next tuesday');
+        $nextFriday = strtotime('next friday');
+        $nextTuesday2 = strtotime('next week tuesday');
+        $nextFriday2 = strtotime('next week friday');
+        $weekNo = date('W');
+        $weekNoNextTuesday = date('W', $nextTuesday);
+        $weekNoNextFriday = date('W', $nextFriday);
+
+        switch ($i) {
+            case 0: 
+              if ($weekNoNextTuesday == $weekNo) {
+                setlocale(LC_TIME,"es_ES");
+                  print '<option value="martes '.date('D,j M',$nextTuesday).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday).'</option>';
+              
+              } elseif($weekNoNextFriday == $weekNo){
+                setlocale(LC_TIME,"es_ES");
+                  print '<option value="viernes '.date('D,j M',$nextFriday).'"><span>Comprando para </span>'.date('D,j M',$nextFriday).'</option>';
+              }
+              break;
+
+            case 1:
+              if ($weekNoNextTuesday == $weekNo) {
+                setlocale(LC_TIME,"es_ES");
+                  print '<option value="viernes '.date('D,j M',$nextFriday).'"><span>Comprando para </span>'.date('D,j M',$nextFriday).'</option>';print '<option value="martes '.date('D,j M',$nextTuesday).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday).'</option>';
+              
+              } elseif($weekNoNextFriday == $weekNo){
+                setlocale(LC_TIME,"es_ES");
+                  print '<option value="martes '.date('D,j M',$nextTuesday2).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday2).'</option>';
+              }
+              break;
+
+            
+            case 2:
+              if ($weekNoNextTuesday == $weekNo) {
+                setlocale(LC_TIME,"es_ES");
+                  print '<option value="martes '.date('D,j M',$nextTuesday2).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday2).'</option>';print '<option value="martes '.date('D,j M',$nextTuesday).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday).'</option>';
+              
+              } elseif($weekNoNextFriday == $weekNo){
+                setlocale(LC_TIME,"es_ES");
+                  print '<option value="viernes '.date('D,j M',$nextFriday2).'"><span>Comprando para </span>'.date('D,j M',$nextFriday2).'</option>';
+              }
+              break;
+          }  
+        
+      }
+    ?>
+  </select>
+</div>
 <div class="line-item-summary">
   
   <?php if ($total): ?>

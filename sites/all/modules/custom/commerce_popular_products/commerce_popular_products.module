@@ -153,6 +153,7 @@ function commerce_popular_products_get_content() {
   if ($all_results == NULL) {
     $all_results = commerce_popular_products_get_product();
   }
+  $all_results = commerce_popular_products_get_product();
   $i = 0;
   $view_count = 0;
   while ($i < $number) {
@@ -256,11 +257,11 @@ function commerce_popular_products_settings_form($form, &$form_state) {
       '3' => '3',
       '4' => '4',
       '5' => '5',
-      '6' => '6',
+     /* '6' => '6',
       '7' => '7',
       '8' => '8',
       '9' => '9',
-      '10' => '10',
+      '10' => '10',*/
     ),
     '#default_value' => $number,
   );
