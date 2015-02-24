@@ -138,6 +138,28 @@ header #block-views-exp-display-products-page{
 .logo-img:hover{
 	transform: scale(1.04);
 }
+
+#zone-branding .block-shopping-cart-block .selector-fecha-entrega{
+	position:absolute;
+	margin: 0px;
+	padding: 0px;
+	height: 44px;
+	margin-left: -236px;
+	margin-top: -6px;	
+}
+#zone-branding .block-shopping-cart-block .selector-fecha-entrega #select-fecha-entrega{
+	border-color: #6E6F71;
+	border-right: none;
+	background-color: transparent;	
+}
+
+#zone-branding .block-shopping-cart-block .selector-fecha-entrega #select-fecha-entrega option{
+	color: #6E6F71;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+}
+
 #zone-branding .block-shopping-cart-block .content{
 	background-image: url("../images/carrito.png");
 	background-position: 10px 50%;
