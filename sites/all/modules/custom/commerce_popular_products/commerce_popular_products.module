@@ -20,6 +20,7 @@ function commerce_popular_products_get_product() {
   // Fetch settings for use.
   $time = variable_get('commerce_popular_products_time', 'month');
   $products = variable_get('commerce_popular_products_products');
+  
   if (isset($products)) {
     // Gather information on all the Commerce product reference fields in use.
     $fields = field_info_fields();
@@ -31,6 +32,7 @@ function commerce_popular_products_get_product() {
         }
       }
     }
+
     // Turn the time period into something we can use with FROM_UNIXTIME().
     $time_period = '';
     switch ($time) {
@@ -51,6 +53,7 @@ function commerce_popular_products_get_product() {
         break;
 
     }
+
     // Create an array to hold all our results for different product types.
     $all_results = array();
     // For each product reference type.
@@ -97,6 +100,7 @@ function commerce_popular_products_get_product() {
       $query->groupBy('cp.product_id');
       $query->groupBy('cp.title');
       $result = $query->execute();
+
       foreach ($result as $record) {
         $product = $record->entity_id;
         $count = $record->sum;
@@ -112,6 +116,7 @@ function commerce_popular_products_get_product() {
     // Call the views to display N items.
     variable_set('commerce_popular_products_popular_products', $all_results);
     return $all_results;
+    dpm($all_results);
   }
 }
 
@@ -150,10 +155,10 @@ function commerce_popular_products_get_content() {
   $output = '';
   $number = variable_get('commerce_popular_products_number', '1');
   $all_results = variable_get('commerce_popular_products_popular_products');
+  
   if ($all_results == NULL) {
     $all_results = commerce_popular_products_get_product();
   }
-  $all_results = commerce_popular_products_get_product();
   $i = 0;
   $view_count = 0;
   while ($i < $number) {
