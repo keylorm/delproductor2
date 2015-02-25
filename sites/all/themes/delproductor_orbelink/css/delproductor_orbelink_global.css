@@ -144,20 +144,49 @@ header #block-views-exp-display-products-page{
 	margin: 0px;
 	padding: 0px;
 	height: 44px;
-	margin-left: -236px;
+	margin-left: -278px;
 	margin-top: -6px;	
 }
+@-moz-document url-prefix() { 
+  #zone-branding .block-shopping-cart-block .selector-fecha-entrega{
+     margin-left: -275px;
+  }
+}
+
 #zone-branding .block-shopping-cart-block .selector-fecha-entrega #select-fecha-entrega{
 	border-color: #6E6F71;
 	border-right: none;
 	background-color: transparent;	
+
+	color: #6E6F71;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	
+	background-image: url("../images/flecha_listado_carrito.png");
+	background-position: 94% 50%;
+	background-repeat: no-repeat;
+	padding-right: 55px;
+	padding-left: 15px;
+
+	-moz-appearance: none; text-indent: 0.01px; text-overflow: '';
+	
 }
+
+/*select, select[size] {
+
+background-repeat: no-repeat;
+background-position: right center;
+padding: 3px;
+padding-right: 20px;
+}*/
 
 #zone-branding .block-shopping-cart-block .selector-fecha-entrega #select-fecha-entrega option{
 	color: #6E6F71;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 13px;
 	font-weight: 600;
+	background-color: #FFF;
 }
 
 #zone-branding .block-shopping-cart-block .content{
@@ -569,7 +598,8 @@ body #breadcrumb .breadcrumb a{
 	background-color: #FDFBF6;
 }
 .nuestra-filosofia-titulo-bloque h2,
-.nuestros-productores-titulo-bloque h2{
+.nuestros-productores-titulo-bloque h2,
+.nuestras-canastas-bloque-title h2{
   margin-bottom: 30px;
   font-family: Proximanova, sans-serif;
   color: #6e6f71;
@@ -586,13 +616,15 @@ body #breadcrumb .breadcrumb a{
 	background-image: url('../images/productos_bgt.png');
 }
 .nuestra-filosofia-titulo-bloque h2 b,
-.nuestros-productores-titulo-bloque h2 b{
+.nuestros-productores-titulo-bloque h2 b,
+.nuestras-canastas-bloque-title h2 b{
   font-family: Pacifico, sans-serif;
   font-weight: 400;
   text-transform: lowercase;
 }
 .nuestra-filosofia-desc p,
-.nuestros-productores-desc p{
+.nuestros-productores-desc p,
+.nuestras-canastas-bloque-descri p{
 	color: #6E6F71;
 	font-family: Proximanova, sans-serif;
 	font-size: 21px;
@@ -2022,4 +2054,80 @@ body .block-productos-block-1 .more-link a{
 	background-image: url(../images/etiqueta.png);
 	background-repeat: no-repeat;
 	background-position: 100% 49%;
+}
+
+
+/*** NUESTRAS CANASTAS ***/
+
+
+.pane-block-8{
+	background-color: #E35755;
+}
+.nuestras-canastas-bloque-title h2{
+  color: #FFF;
+  background-image: url('../images/canastas_bgt.png');	
+}
+
+.nuestras-canastas-bloque-descri p{
+	color: #FFF;
+}
+
+.nuestras-canastas-bloque-list-bloques{
+	margin-top: 30px;
+}
+
+.nuestras-canastas-bloque-list-bloques .bloque{
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	margin-right: 47px;
+	position:relative;
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1);
+	-moz-box-shadow:    4px 4px 0px 0px rgba(255, 255, 255, 1);
+	box-shadow:         4px 4px 0px 0px rgba(255, 255, 255, 1);
+	
+}
+.nuestras-canastas-bloque-list-bloques .bloque .nuestras-canastas-bloque-texto-box{
+	position:absolute;
+	left: 0px;
+	right: 0px;
+	top: 40%;
+	text-align:center;
+}
+.nuestras-canastas-bloque-list-bloques .bloque .nuestras-canastas-bloque-texto-box .texto a{
+	font-family: Pacifico, sans-serif;
+	font-weight: normal;
+	font-size: 27px;
+	color: #FFF;
+	text-shadow: 2px 1px #333;
+}
+.nuestras-canastas-bloque-list-bloques .bloque:hover .nuestras-canastas-bloque-texto-box .boton{
+	opacity: 1;
+	margin-top: 0px;
+}
+.nuestras-canastas-bloque-list-bloques .bloque .nuestras-canastas-bloque-texto-box .boton{
+	opacity: 0;
+	margin-top: 30px;
+	transition: all 450ms ease;
+}
+.nuestras-canastas-bloque-list-bloques .bloque3{
+	margin-right: 0px;
+}
+
+.nuestras-canastas-bloque-box .nuestras-canastas-unase-al-club-boton{
+	text-align: center;
+}
+.nuestras-canastas-bloque-box .nuestras-canastas-unase-al-club-boton a{
+	display: inline-block;
+	padding: 10px 15px;
+	border: 4px solid white;
+	font-family: Proximanova, sans-serif;
+	color: white;
+	font-size: 21px;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0 auto;
+	margin-top: 70px;
 }
