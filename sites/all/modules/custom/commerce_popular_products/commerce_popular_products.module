@@ -115,8 +115,9 @@ function commerce_popular_products_get_product() {
     array_multisort($count, SORT_DESC, $all_results);
     // Call the views to display N items.
     variable_set('commerce_popular_products_popular_products', $all_results);
-    return $all_results;
     dpm($all_results);
+    return $all_results;
+
   }
 }
 
