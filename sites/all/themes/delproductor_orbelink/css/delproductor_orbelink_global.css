@@ -599,7 +599,8 @@ body #breadcrumb .breadcrumb a{
 }
 .nuestra-filosofia-titulo-bloque h2,
 .nuestros-productores-titulo-bloque h2,
-.nuestras-canastas-bloque-title h2{
+.nuestras-canastas-bloque-title h2,
+.nuestros-productos-home-header h2{
   margin-bottom: 30px;
   font-family: Proximanova, sans-serif;
   color: #6e6f71;
@@ -612,19 +613,22 @@ body #breadcrumb .breadcrumb a{
   background-repeat: no-repeat;
   background-position: 50% 50%;  
 }
-.nuestros-productores-titulo-bloque h2{
+.nuestros-productores-titulo-bloque h2,
+.nuestros-productos-home-header h2{
 	background-image: url('../images/productos_bgt.png');
 }
 .nuestra-filosofia-titulo-bloque h2 b,
 .nuestros-productores-titulo-bloque h2 b,
-.nuestras-canastas-bloque-title h2 b{
+.nuestras-canastas-bloque-title h2 b,
+.nuestros-productos-home-header h2 b{
   font-family: Pacifico, sans-serif;
   font-weight: 400;
   text-transform: lowercase;
 }
 .nuestra-filosofia-desc p,
 .nuestros-productores-desc p,
-.nuestras-canastas-bloque-descri p{
+.nuestras-canastas-bloque-descri p,
+.nuestros-productos-home-header p{
 	color: #6E6F71;
 	font-family: Proximanova, sans-serif;
 	font-size: 21px;
@@ -1330,9 +1334,9 @@ body .view-p-gina-de-productores .more-link a:after{
 	*display: inline;
 	width: 240px;
 	border: 1px solid #6E6F71;
-	float: left;
+	/*float: left;*/
 	position:relative;
-	margin-right: 8px;
+	margin-right: 7px;
 	margin-bottom: 15px;
 	-webkit-box-shadow: 3px 2px 0px 0px rgba(224, 224, 224, 0.9);
 	-moz-box-shadow:    3px 2x 0px 0px rgba(224, 224, 224, 0.9);
@@ -1359,6 +1363,21 @@ body .view-p-gina-de-productores .more-link a:after{
 
 .view-id-productos .views-row:nth-child(3n+3){
 	margin-right: 0px;
+}
+
+.not-front .view-id-productos_mas_vendidos.view-id-productos .view-header h2{
+	color: #76C9B7;
+	background-image: url(../images/linea_izq_1.png), url(../images/linea_der_1.png);
+	background-position: 0% 50%, 100% 50%;
+}
+.not-front .view-id-productos_mas_vendidos.view-id-productos .view-header h2 b{
+	color: #76C9B7;
+}
+.not-front .view-id-productos_mas_vendidos.view-id-productos .views-row{
+	width: 239px;
+}
+.front .view-id-productos_mas_vendidos.view-id-productos .views-row{
+	margin-right: 7px;
 }
 
 .view-id-productos .views-row .info-producto-box{
@@ -1605,7 +1624,8 @@ body .view-p-gina-de-productores .more-link a:after{
 	width: 1000px;
 	margin: 0 auto;
 }
-.block-productos-block-1 .titulo-bloque-promociones-semana h2{
+.block-productos-block-1 .titulo-bloque-promociones-semana h2,
+.not-front .view-id-productos_mas_vendidos.view-id-productos h2{
 	font-family: Proximanova, sans-serif;
 	font-weight: 300;
 	font-size: 30px;
@@ -1616,7 +1636,8 @@ body .view-p-gina-de-productores .more-link a:after{
 	background-repeat: no-repeat, no-repeat;
 	background-position: 15% 50%, 85% 50%;
 }
-.block-productos-block-1 .titulo-bloque-promociones-semana h2 span{
+.block-productos-block-1 .titulo-bloque-promociones-semana h2 span,
+.not-front .view-id-productos_mas_vendidos.view-id-productos h2 span{
 	font-family: Pacifico, sans-serif;
 	font-weight: normal;
 	font-size: 40px;
@@ -1624,11 +1645,14 @@ body .view-p-gina-de-productores .more-link a:after{
 }
 
 .block-productos-block-1 .view-id-productos .views-row{
-	margin-right: 8px;
+	margin-right: 7px;
 }
-.block-productos-block-1 .view-id-productos .views-row:nth-child(4n+4){
+.block-productos-block-1 .view-id-productos .views-row:nth-child(4n+4),
+.front .view-id-productos_mas_vendidos.view-id-productos .views-row:nth-child(4n+4){
 	margin-right: 0px;
 }
+
+
 .block-productos-block-1 .view-id-productos .views-row .ultima-linea-preciouni-preciototal .preciototal.tag-promo{
 	color: #F7941E;
 	padding-right: 23px;
@@ -1813,8 +1837,76 @@ body .block-productos-block-1 .more-link a{
 	margin-bottom: -23px;
 }
 
+.relleno-auto-canasta{
+	background-color: #F1F2F2;
+	margin-top: 75px;
+	padding-bottom: 25px;
+}
+.relleno-auto-canasta .relleno-auto-canasta-titulo{
+	border-bottom: 1px solid #D1D3D4;
+	padding: 13px 0px;
+}
+.relleno-auto-canasta .relleno-auto-canasta-titulo h4{
+	font-family: Proximanova, sans-serif;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 16px;
+	color: #6E6F71;
+	text-align:center;
+	padding: 0px 70px;
+	margin-bottom: 0px;	
+}
+
+.relleno-auto-canasta .relleno-auto-canasta-form{
+	padding: 25px 15px 15px 15px;
+	box-sizing:border-box;
+}
+
+.relleno-auto-canasta .relleno-auto-canasta-form form div{
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;	
+}
+.relleno-auto-canasta .relleno-auto-canasta-form form .relleno-auto-canasta-input-check{
+	width: 60%;
+	margin-top: 12px;
+}
+.relleno-auto-canasta .relleno-auto-canasta-form form .relleno-auto-canasta-input-check #rellenar-check{
+	float: left;
+}
+.relleno-auto-canasta .relleno-auto-canasta-form form  .relleno-auto-canasta-input-select{
+	width: 36%;
+	float:right;
+	margin-top: -20px\9;
+}
+.relleno-auto-canasta .relleno-auto-canasta-form form  .relleno-auto-canasta-input-select #rellenar-select-tiempo{
+	height: 34px;
+	border-radius: 4px;
+
+	background-image: url("../images/flecha_listado_carrito.png");
+	background-position: 94% 50%;
+	background-repeat: no-repeat;
+	padding-right: 20px;
+	padding-left: 10px;
+
+	-moz-appearance: none; text-indent: 0.01px; text-overflow: '';
+	
+}
+.relleno-auto-canasta .relleno-auto-canasta-form form .relleno-auto-canasta-input-check label,
+.relleno-auto-canasta .relleno-auto-canasta-form form  .relleno-auto-canasta-input-select #rellenar-select-tiempo{
+	color: #6E6F71;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	font-weight: normal;	
+}
+.relleno-auto-canasta .relleno-auto-canasta-form form .relleno-auto-canasta-input-check label{
+	line-height: 12px;
+	line-height: 15px\9;
+	margin-left: 25px;
+}
+
 .share-this-box{
-	margin-top: 50px;
+	margin-top: 10px;
 	width: 220px;
 	float: right;
 }
