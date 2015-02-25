@@ -48,6 +48,9 @@
 body{
 	background: none !important;
 }
+.front .zone-content-wrapper .zone-content{
+	padding-bottom: 0px;
+}
 
 /*** MENÚ TOP Y BUSCADOR ***/
 
@@ -131,7 +134,9 @@ header #block-views-exp-display-products-page{
 	display: none;
 }
 /*** BRANDING ***/
+#region-branding{
 
+}
 .logo-img{
 	transition: all 500ms ease;
 }
@@ -170,7 +175,7 @@ header #block-views-exp-display-products-page{
 	padding-left: 15px;
 
 	-moz-appearance: none; text-indent: 0.01px; text-overflow: '';
-	
+
 }
 
 /*select, select[size] {
@@ -835,6 +840,7 @@ body .region-postscript-full-width{
 }
 .receta .icons_recetas{
 	position:absolute;
+	position:relative\9;
 	bottom: 5px;
 }
 .receta .icons_recetas div{
@@ -1373,7 +1379,8 @@ body .view-p-gina-de-productores .more-link a:after{
 .not-front .view-id-productos_mas_vendidos.view-id-productos .view-header h2 b{
 	color: #76C9B7;
 }
-.not-front .view-id-productos_mas_vendidos.view-id-productos .views-row{
+.not-front .view-id-productos_mas_vendidos.view-id-productos .views-row,
+.page-taxonomy-term .view-id-productos .views-row{
 	width: 239px;
 }
 .front .view-id-productos_mas_vendidos.view-id-productos .views-row{
@@ -1505,6 +1512,7 @@ body .view-p-gina-de-productores .more-link a:after{
 .menu-block-4 .menu li ul,
 .menu-block-4 .menu li ul li ul{
 	display: none;
+	list-style: none;
 }
 
 
@@ -1590,7 +1598,9 @@ body .view-p-gina-de-productores .more-link a:after{
 	margin-top: 1px;
 }
 .menu-block-4 > .menu > li > ul > li > ul{
+	list-style: none;
 	padding: 15px 0px 15px 0px;
+	width: 109%\9;
 }
 .menu-block-4 > .menu > li > ul > li > ul > li{
 	box-sizing: border-box;
@@ -1677,7 +1687,15 @@ body .block-productos-block-1 .more-link a{
 	box-sizing: border-box;
 	display:inline-block;
 	*zoom: 1;
-	*display: inline;		
+	*display: inline;
+	box-sizing:border-box;	
+}
+.detalle-producto-col-izq{
+	width: 52%\9;
+}
+.detalle-producto-col-der{
+	width: 46%\9;
+	float:right\9;
 }
 .detalle-producto-col-izq .flexslider{
 	margin: 0px;
@@ -1751,6 +1769,9 @@ body .block-productos-block-1 .more-link a{
 	*zoom: 1;
 	*display: inline;
 }*/
+.detalle-producto-col-der .mensaje-cantidad-add-to-cart{
+	clear:both;
+}
 .detalle-producto-col-der .mensaje-cantidad-add-to-cart span{
 	font-family:'Source Sans Pro', sans-serif;
 	font-size: 12px;
@@ -1955,9 +1976,9 @@ body .block-productos-block-1 .more-link a{
 }
 .view-bloques-detalle-productos #ultabs li{
 	display:inline-block;
-  *zoom: 1;
-  *display: inline;		
-  
+	*zoom: 1;
+	*display: inline;
+	width: auto;		
 }
 .view-bloques-detalle-productos #ultabs li a{
 	display:block;
@@ -1971,17 +1992,20 @@ body .block-productos-block-1 .more-link a{
 	border-bottom: none;
 	padding: 10px 10px;
 	outline: none;
+	box-sizing:border-box;	
 }
 .view-bloques-detalle-productos #ultabs li.active a{
 	color: #E35755;
 	padding-bottom: 20px;
 	margin-bottom: -10px;
 	background-color: #FFF;
+	box-sizing:border-box;	
 }
 .view-bloques-detalle-productos .content_tabs{
 	border: 1px solid #AFB1B3;
 	box-sizing: border-box;
 	padding: 30px;
+	padding: 15px\9;
 }
 .view-bloques-detalle-productos .content_tabs .tab{
 	display: none;
@@ -2016,6 +2040,7 @@ body .block-productos-block-1 .more-link a{
 	*display: inline;	
 	margin-left: 0px;
 	margin-right: 4px;
+	box-sizing:border-box;	
 }
 .view-bloques-detalle-productos .content_tabs .tags ul li a{
 	display:block;
