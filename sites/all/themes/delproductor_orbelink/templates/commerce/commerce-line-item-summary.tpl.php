@@ -36,22 +36,24 @@
         switch ($i) {
             case 0: 
               if ($weekNoNextTuesday == $weekNo) {
-                setlocale(LC_TIME,"es_ES");
+                  
                   print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday).'</option>';
               
               } elseif($weekNoNextFriday == $weekNo){
-                setlocale(LC_TIME,"es_ES");
+                  
                   print '<option value="viernes '.date('D,j M',$nextFriday).'"><b>Comprando para </b>'.date('D,j M',$nextFriday).'</option>';
+              }else{
+                  print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday).'</option>';
               }
               break;
 
             case 1:
               if ($weekNoNextTuesday == $weekNo) {
-                setlocale(LC_TIME,"es_ES");
+                
                   print '<option value="viernes '.date('D,j M',$nextFriday).'"><b>Comprando para </b>'.date('D,j M',$nextFriday).'</option>';print '<option value="martes '.date('D,j M',$nextTuesday).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday).'</option>';
               
               } elseif($weekNoNextFriday == $weekNo){
-                setlocale(LC_TIME,"es_ES");
+                
                   print '<option value="martes '.date('D,j M',$nextTuesday2).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday2).'</option>';
               }
               break;
@@ -59,11 +61,11 @@
             
             case 2:
               if ($weekNoNextTuesday == $weekNo) {
-                setlocale(LC_TIME,"es_ES");
+                
                   print '<option value="martes '.date('D,j M',$nextTuesday2).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday2).'</option>';print '<option value="martes '.date('D,j M',$nextTuesday).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday).'</option>';
               
               } elseif($weekNoNextFriday == $weekNo){
-                setlocale(LC_TIME,"es_ES");
+                
                   print '<option value="viernes '.date('D,j M',$nextFriday2).'"><b>Comprando para </b>'.date('D,j M',$nextFriday2).'</option>';
               }
               break;
