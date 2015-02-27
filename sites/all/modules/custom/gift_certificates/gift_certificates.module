@@ -73,13 +73,13 @@ function gift_certificates_mail($key, &$message, $params) {
     );
     switch ($key) {
         case 'gift_certificate':
-            $message['subject'] = t('@sender_name has sent you a @site-name gift certificate', array('@sender_name' => $params['sender_name'], '@site-name' => variable_get('site_name', 'Drupal')), $options);
+            $message['subject'] = t('@sender_name te ha enviado una tarjeta de regalo para utilizar en el sitio @site-name', array('@sender_name' => $params['sender_name'], '@site-name' => variable_get('site_name', 'Drupal')), $options);
             $message['body'][] = t('@recipient_name,', array('@recipient_name' => $params['recipient_name']), $options);
-            $message['body'][] = t('@sender_name has sent you a gift certificate for @coupon_amount to spend at @site-name.', array('@sender_name' => $params['sender_name'], '@coupon_amount' => $params['coupon_amount'], '@site-name' => variable_get('site_name', 'Drupal')), $options);
-            $message['body'][] = t('To use your gift certificate, go to @site-url and enter the code: @coupon_code at checkout.', array('@coupon_code' => $params['coupon_code'], '@site-url' => $base_url), $options);
+            $message['body'][] = t('@sender_name te ha enviado una tarjeta de regalo por @coupon_amount para gastar en el sitio @site-name.', array('@sender_name' => $params['sender_name'], '@coupon_amount' => $params['coupon_amount'], '@site-name' => variable_get('site_name', 'Drupal')), $options);
+            $message['body'][] = t('Para usar su tarjeta de regalo vaya a @site-url e ingrese el siguiente código: @coupon_code cuando esté completando la orden.', array('@coupon_code' => $params['coupon_code'], '@site-url' => $base_url), $options);
             if (strlen($params['personal_message'])) {
-                $message['body'] = t('@sender_name says:', array('@sender_name' => $params['sender_name']), $options);
-                //$message['body'][] = $params['personal_message'];
+                $message['body'] = t('@sender_name te envió el siguiente mensaje:', array('@sender_name' => $params['sender_name']), $options);
+                $message['body'][] = $params['personal_message'];
             }
             break;
     }
@@ -101,4 +101,21 @@ function gift_certificates_mail_send($variables) {
     $language = language_default();
     $send = TRUE;
     $result = drupal_mail($module, $key, $to, $language, $params, $from, $send);
+
+   /* $mail = new PHPMailer();
+    $mail->IsMail();
+    $mail->setCharset = "UTF-8";
+    $mail->Host = "mail.orbelink.com";
+    $mail->Port = "587"; 
+    $mail->AddAddress($variables['email']);
+    $mail->setFrom = "keylor@orbelink.com";
+    $mail->Subject = "Has recibido una tarjeta de regalo para Del Productor";
+    $mail->Body = $variables;
+    $mail->IsHTML(TRUE);
+    $mail->AltBody="";
+    $mail->Username = "keylor@orbelink.com";
+    $mail->Password = "kehumoga";
+    
+
+    $mail->Send();*/
 }

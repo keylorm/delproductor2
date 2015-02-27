@@ -25,6 +25,7 @@
   <select id="select-fecha-entrega">
     <?php 
       for($i=0;$i<3;$i++){
+        setlocale(LC_ALL, 'es_CR');
         $nextTuesday = strtotime('next tuesday');
         $nextFriday = strtotime('next friday');
         $nextTuesday2 = strtotime('next week tuesday');
@@ -32,6 +33,9 @@
         $weekNo = date('W');
         $weekNoNextTuesday = date('W', $nextTuesday);
         $weekNoNextFriday = date('W', $nextFriday);
+        $weekNoNextTuesday2 = date('W', $nextTuesday2);
+        $weekNoNextFriday2 = date('W', $nextFriday2);
+        $nextTuesday3 = strtotime('next week+1 tuesday');
 
         switch ($i) {
             case 0: 
@@ -48,25 +52,27 @@
               break;
 
             case 1:
-              if ($weekNoNextTuesday == $weekNo) {
+              if(($weekNoNextTuesday == $weekNo)&&($weekNoNextFriday == $weekNo)){
                 
-                  print '<option value="viernes '.date('D,j M',$nextFriday).'"><b>Comprando para </b>'.date('D,j M',$nextFriday).'</option>';print '<option value="martes '.date('D,j M',$nextTuesday).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday).'</option>';
-              
-              } elseif($weekNoNextFriday == $weekNo){
-                
-                  print '<option value="martes '.date('D,j M',$nextTuesday2).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday2).'</option>';
+                  print '<option value="viernes '.date('D,j M',$nextFriday).'"><b>Comprando para </b>'.date('D,j M',$nextFriday).'</option>';
+              }elseif($weekNoNextFriday == $weekNo){
+                   print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday).'</option>';
+              }else{
+                  print '<option value="viernes '.date('D,j M',$nextFriday2).'"><b>Comprando para </b>'.date('D,j M',$nextFriday2).'</option>';
               }
               break;
 
             
             case 2:
-              if ($weekNoNextTuesday == $weekNo) {
+              if (($weekNoNextTuesday == $weekNo)&&($weekNoNextFriday == $weekNo)) {
                 
-                  print '<option value="martes '.date('D,j M',$nextTuesday2).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday2).'</option>';print '<option value="martes '.date('D,j M',$nextTuesday).'"><span>Comprando para </span>'.date('D,j M',$nextTuesday).'</option>';
+                  print '<option value="martes '.date('D,j M',$nextTuesday2).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday2).'</option>';
               
               } elseif($weekNoNextFriday == $weekNo){
                 
                   print '<option value="viernes '.date('D,j M',$nextFriday2).'"><b>Comprando para </b>'.date('D,j M',$nextFriday2).'</option>';
+              } else{
+                  print '<option value="martes '.date('D,j M',$nextTuesday3).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday3).'</option>';
               }
               break;
           }  
