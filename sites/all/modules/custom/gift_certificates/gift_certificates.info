@@ -1,0 +1,10 @@
+name = Gift Certificates
+description = Supporting functionality for gift certificates
+core = 7.x
+package = Commerce
+
+dependencies[] = commerce
+dependencies[] = commerce_coupon
+dependencies[] = commerce_coupon_fixed_amount
+dependencies[] = commerce_custom_product
+dependencies[] = email

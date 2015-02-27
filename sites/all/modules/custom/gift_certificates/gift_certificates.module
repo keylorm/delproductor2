@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * Implements hook_rules_action_info().
+ */
+function gift_certificates_rules_action_info() {
+    return array(
+        'gift_certificates_action_send' => array(
+            'label' => t('Send Gift Certificate'),
+            'group' => t('Gift Certificates'),
+        ),
+    );
+}
+
+/**
+ * Rule action; sends gift certificate(s).
+ */
+function gift_certificates_action_send() {
+// Get the order
+    $order_id = arg(1);
+    $order = commerce_order_load($order_id);
+// Go through the line items
+    
+    foreach ($order->commerce_line_items[LANGUAGE_NONE] as $line_item_item) {
+        $line_item_id = $line_item_item['line_item_id'];
+        $line_item = commerce_line_item_load($line_item_id);
+// is this a gift certificate?
+        if ($line_item->type == 'tarjeta_de_regalo') {
+// create a params array, to use in the subsequent email
+            $params = array();
+// get the product ID
+            $product_id = $line_item->commerce_product[LANGUAGE_NONE][0]['product_id'];
+// load the product
+            $product = commerce_product_load($product_id);
+// get the recipient's details
+            $params['recipient_name'] = $line_item->field_gift_recipient_name[LANGUAGE_NONE][0]['safe_value'];
+            $params['email'] = $line_item->field_gift_recipient_email[LANGUAGE_NONE][0]['email'];
+// and the sender details
+            $params['sender_name'] = $line_item->field_gift_sender_name[LANGUAGE_NONE][0]['safe_value'];
+// and optionally, the personal message
+            $params['personal_message'] = $line_item->field_gift_personal_message[LANGUAGE_NONE][0]['safe_value'];
+// Create the coupon
+            $coupon = commerce_coupon_create('commerce_coupon_fixed');
+// set to single use
+            $coupon->commerce_coupon_number_of_uses[LANGUAGE_NONE][0]['value'] = 1;
+// set the amount
+            $coupon->commerce_coupon_fixed_amount[LANGUAGE_NONE][0] = array(
+                'amount' => $product->commerce_price[LANGUAGE_NONE][0]['amount'],
+                'currency_code' => $product->commerce_price[LANGUAGE_NONE][0]['currency_code'],
+            );
+// save the coupon
+            commerce_coupon_save($coupon);
+// get the coupon code
+            $params['coupon_code'] = $coupon->commerce_coupon_code[LANGUAGE_NONE][0]['value'];
+// add the formatted amount to the parameters
+            $params['coupon_amount'] = commerce_currency_format(
+                    $coupon->commerce_coupon_fixed_amount[LANGUAGE_NONE][0]['amount'], $coupon->commerce_coupon_fixed_amount[LANGUAGE_NONE][0]['currency_code']
+            );
+// Now send the coupon via email to the recipient
+            gift_certificates_mail_send($params);
+        }
+    }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function gift_certificates_mail($key, &$message, $params) {
+    global $user;
+    global $base_url;
+    $options = array(
+        'langcode' => $message['language']->language,
+    );
+    switch ($key) {
+        case 'gift_certificate':
+            $message['subject'] = t('@sender_name has sent you a @site-name gift certificate', array('@sender_name' => $params['sender_name'], '@site-name' => variable_get('site_name', 'Drupal')), $options);
+            $message['body'][] = t('@recipient_name,', array('@recipient_name' => $params['recipient_name']), $options);
+            $message['body'][] = t('@sender_name has sent you a gift certificate for @coupon_amount to spend at @site-name.', array('@sender_name' => $params['sender_name'], '@coupon_amount' => $params['coupon_amount'], '@site-name' => variable_get('site_name', 'Drupal')), $options);
+            $message['body'][] = t('To use your gift certificate, go to @site-url and enter the code: @coupon_code at checkout.', array('@coupon_code' => $params['coupon_code'], '@site-url' => $base_url), $options);
+            if (strlen($params['personal_message'])) {
+                $message['body'] = t('@sender_name says:', array('@sender_name' => $params['sender_name']), $options);
+                //$message['body'][] = $params['personal_message'];
+            }
+            break;
+    }
+}
+
+/**
+ * Sends an e-mail.
+ *
+ * @param $variables
+ * An array of variables used to send the mail, including the various parameters
+ */
+function gift_certificates_mail_send($variables) {
+    $module = 'gift_certificates';
+    $key = 'gift_certificate';
+// Specify 'to' and 'from' addresses.
+    $to = $variables['email'];
+    $from = variable_get('site_mail', 'admin@example.com');
+    $params = $variables;
+    $language = language_default();
+    $send = TRUE;
+    $result = drupal_mail($module, $key, $to, $language, $params, $from, $send);
+}
