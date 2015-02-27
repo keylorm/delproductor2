@@ -515,15 +515,21 @@ header #zone-user-wrapper #block-menu-menu-top-menu{
 	margin: 0 auto;
 	float:none;	
 }
+
 body #breadcrumb .breadcrumb{
 	background: none;
 	border-radius: 0px;
 	border: none;
 	padding: 0px;
 	font-weight:bold;
-  font-family:'Source Sans Pro', sans-serif;
-  font-size: 13px;	
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 13px;
 }
+
+body.node-type-alimentos #breadcrumb .breadcrumb{
+	margin-bottom: 50px;
+}
+
 body #breadcrumb .breadcrumb a{
 	font-weight: normal;
 	background-image: url('../images/flecha_breadcrumb.png');
@@ -1682,6 +1688,7 @@ body .block-productos-block-1 .more-link a{
 
 /* DETALLE PRODUCTO */
 
+
 .detalle-producto-col-izq,
 .detalle-producto-col-der{
 	box-sizing: border-box;
@@ -1697,6 +1704,25 @@ body .block-productos-block-1 .more-link a{
 	width: 46%\9;
 	float:right\9;
 }
+
+.detalle-producto-col-der .btnatras{
+	display:block; float: right;
+	background-color: #D1D3D4;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	font-weight:bold;
+	color: #FFF;
+	border-radius: 4px;
+	padding: 7px 15px 7px 25px;	
+	background-image: url('../images/flecha_atras.png');
+	background-repeat: no-repeat;
+	background-position: 15% 50%;
+	clear:both;
+	position: relative;
+	margin-top: -65px;	
+}
+
+
 .detalle-producto-col-izq .flexslider{
 	margin: 0px;
 	background: none;
@@ -1978,7 +2004,7 @@ body .block-productos-block-1 .more-link a{
 	display:inline-block;
 	*zoom: 1;
 	*display: inline;
-	width: auto;		
+	/*width: auto;*/	
 }
 .view-bloques-detalle-productos #ultabs li a{
 	display:block;
@@ -1992,20 +2018,20 @@ body .block-productos-block-1 .more-link a{
 	border-bottom: none;
 	padding: 10px 10px;
 	outline: none;
-	box-sizing:border-box;	
+	/*box-sizing:border-box;*/	
 }
 .view-bloques-detalle-productos #ultabs li.active a{
 	color: #E35755;
 	padding-bottom: 20px;
 	margin-bottom: -10px;
 	background-color: #FFF;
-	box-sizing:border-box;	
+	/*box-sizing:border-box;*/	
 }
 .view-bloques-detalle-productos .content_tabs{
 	border: 1px solid #AFB1B3;
 	box-sizing: border-box;
 	padding: 30px;
-	padding: 15px\9;
+	/*padding: 15px\9;*/
 }
 .view-bloques-detalle-productos .content_tabs .tab{
 	display: none;
