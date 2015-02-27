@@ -1159,7 +1159,8 @@ body h1#page-title{
 	text-align:center;
 }
 #views_infinite_scroll_button a,
-body .more-link a{
+body .more-link a,
+.view-tarjetas-de-regalo .comprar-boton a{
 	border-color: #6e6f71;
 	color: #6e6f71;	
 	display: inline-block;
@@ -2273,4 +2274,42 @@ body .block-productos-block-1 .more-link a{
 	text-transform: uppercase;
 	margin: 0 auto;
 	margin-top: 70px;
+}
+
+/** TARJETA DE RELAGO **/
+
+
+.view-tarjetas-de-regalo{
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+
+.view-tarjetas-de-regalo .views-row{
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	margin-right: 46px;
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+
+}
+.view-tarjetas-de-regalo .views-row:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.view-tarjetas-de-regalo .views-row-last{
+	margin-right: 0px;
+}
+.view-tarjetas-de-regalo .comprar-boton{
+	text-align:center;
+
 }
