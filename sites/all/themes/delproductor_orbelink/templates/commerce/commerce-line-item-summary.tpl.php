@@ -41,24 +41,24 @@
             case 0: 
               if ($weekNoNextTuesday == $weekNo) {
                   
-                  print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday).'</option>';
+                  print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para Martes, </b>'.date('j M',$nextTuesday).'</option>';
               
               } elseif($weekNoNextFriday == $weekNo){
                   
-                  print '<option value="viernes '.date('D,j M',$nextFriday).'"><b>Comprando para </b>'.date('D,j M',$nextFriday).'</option>';
+                  print '<option value="viernes '.date('D,j M',$nextFriday).'"><b>Comprando para Viernes, </b>'.date('j M',$nextFriday).'</option>';
               }else{
-                  print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday).'</option>';
+                  print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para Martes, </b>'.date('j M',$nextTuesday).'</option>';
               }
               break;
 
             case 1:
               if(($weekNoNextTuesday == $weekNo)&&($weekNoNextFriday == $weekNo)){
                 
-                  print '<option value="viernes '.date('D,j M',$nextFriday).'"><b>Comprando para </b>'.date('D,j M',$nextFriday).'</option>';
+                  print '<option value="viernes '.date('D,j M',$nextFriday).'"><b>Comprando para Viernes, </b>'.date('j M',$nextFriday).'</option>';
               }elseif($weekNoNextFriday == $weekNo){
-                   print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday).'</option>';
+                   print '<option value="martes '.date('D,j M',$nextTuesday).'"><b>Comprando para Martes, </b>'.date('j M',$nextTuesday).'</option>';
               }else{
-                  print '<option value="viernes '.date('D,j M',$nextFriday2).'"><b>Comprando para </b>'.date('D,j M',$nextFriday2).'</option>';
+                  print '<option value="viernes '.date('D,j M',$nextFriday2).'"><b>Comprando para Viernes, </b>'.date('j M',$nextFriday2).'</option>';
               }
               break;
 
@@ -66,13 +66,13 @@
             case 2:
               if (($weekNoNextTuesday == $weekNo)&&($weekNoNextFriday == $weekNo)) {
                 
-                  print '<option value="martes '.date('D,j M',$nextTuesday2).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday2).'</option>';
+                  print '<option value="martes '.date('D,j M',$nextTuesday2).'"><b>Comprando para Martes, </b>'.date('j M',$nextTuesday2).'</option>';
               
               } elseif($weekNoNextFriday == $weekNo){
                 
-                  print '<option value="viernes '.date('D,j M',$nextFriday2).'"><b>Comprando para </b>'.date('D,j M',$nextFriday2).'</option>';
+                  print '<option value="viernes '.date('D,j M',$nextFriday2).'"><b>Comprando para Viernes, </b>'.date('j M',$nextFriday2).'</option>';
               } else{
-                  print '<option value="martes '.date('D,j M',$nextTuesday3).'"><b>Comprando para </b>'.date('D,j M',$nextTuesday3).'</option>';
+                  print '<option value="martes '.date('D,j M',$nextTuesday3).'"><b>Comprando para Martes, </b>'.date('j M',$nextTuesday3).'</option>';
               }
               break;
           }  

@@ -141,7 +141,7 @@ header #block-views-exp-display-products-page{
 	transition: all 500ms ease;
 }
 .logo-img:hover{
-	transform: scale(1.04);
+	transform: scale(1.02);
 }
 
 #zone-branding .block-shopping-cart-block .selector-fecha-entrega{
@@ -230,7 +230,7 @@ padding-right: 20px;
 	text-align: center;
 	border: 2px solid #FFF;
 	position: absolute;
-	top: -15px;
+	top: 15px;
 	right: -15px;
 }
 #zone-branding .block-shopping-cart-block .view-empty .line-item-quantity{
@@ -282,6 +282,7 @@ body #block-menu-menu-user-menu .content ul.menu li a{
 	line-height: 13px;
 	border-right: 1px solid #6E6F71;
 	transition: all 500ms ease;
+	background-color: transparent;
 }
 #block-menu-menu-user-menu .content ul.menu li a:hover{
 	background: none;
@@ -819,12 +820,12 @@ body .region-postscript-full-width{
 	cursor: pointer;
 }
 .receta:hover{
-	-webkit-transform: scale(1.05);
-	-moz-transform: scale(1.05);
-	-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	-o-transform: scale(1.05);
-	transform: scale(1.05);
+	-webkit-transform: scale(1.03);
+	-moz-transform: scale(1.03);
+	-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	-o-transform: scale(1.03);
+	transform: scale(1.03);
 }
 .receta .receta_info{
 	padding: 10px 20px;
@@ -1109,12 +1110,12 @@ body h1#page-title{
 }
 .page-productores .views-row:hover,
 .view-id-p_gina_de_productores .views-row:hover{
-	-webkit-transform: scale(1.05);
-	-moz-transform: scale(1.05);
-	-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	-o-transform: scale(1.05);
-	transform: scale(1.05);
+	-webkit-transform: scale(1.03);
+	-moz-transform: scale(1.03);
+	-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	-o-transform: scale(1.03);
+	transform: scale(1.03);
 }
 .page-productores .views-field-path,
 .view-id-p_gina_de_productores .views-field-path{
@@ -1369,11 +1370,11 @@ body .view-productos-mas-vendidos .more-link a:after{
 	left: 0%;
 }
 .view-id-productos .views-row:hover{
-	-webkit-transform: scale(1.05);
-	-moz-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	-o-transform: scale(1.05);
-	transform: scale(1.05);
+	-webkit-transform: scale(1.03);
+	-moz-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	-o-transform: scale(1.03);
+	transform: scale(1.03);
 }
 .view-id-productos .views-row:hover .add-to-cart-image-buttom .form-submit{
 	display: block;
@@ -1418,6 +1419,11 @@ body .view-productos-mas-vendidos .more-link a:after{
 }
 .view-id-productos .views-row .imagen-productor-producto img{
 	border-radius: 50%;
+	transition: all 0.3s ease 0s;
+}
+
+.view-id-productos .views-row .imagen-productor-producto img:hover{
+	transform: rotate(10deg);
 }
 .view-id-productos .views-row .add-to-cart-image-buttom{
 	position:absolute;
